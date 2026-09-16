@@ -24,14 +24,23 @@ body{
   font-family:Tahoma,Arial,sans-serif;
 }
 
+body.lock{
+  overflow:hidden;
+}
+
 a{
   text-decoration:none;
   color:inherit;
 }
 
 button,
-input{
+input,
+textarea{
   font-family:inherit;
+}
+
+button{
+  cursor:pointer;
 }
 
 .wrap{
@@ -43,7 +52,7 @@ input{
 
 header{
   background:#07130f;
-  color:#fff;
+  color:white;
   position:sticky;
   top:0;
   z-index:100;
@@ -77,20 +86,17 @@ nav a:hover{
   color:#22c982;
 }
 
-/* CART BUTTON */
-
 .cartBtn{
   border:0;
   background:#12a36a;
-  color:#fff;
+  color:white;
   padding:10px 15px;
   border-radius:10px;
-  cursor:pointer;
   font-weight:bold;
 }
 
 .cartCount{
-  background:#fff;
+  background:white;
   color:#08794d;
   border-radius:50%;
   padding:2px 7px;
@@ -101,8 +107,8 @@ nav a:hover{
 
 .hero{
   background:
-  radial-gradient(circle at 80% 20%,#12a36a66,transparent 35%),
-  linear-gradient(120deg,#07130f,#0b3828,#12a36a);
+    radial-gradient(circle at 80% 20%,#12a36a66,transparent 35%),
+    linear-gradient(120deg,#07130f,#0b3828,#12a36a);
   color:white;
   padding:75px 0;
 }
@@ -243,15 +249,12 @@ nav a:hover{
   color:white;
   padding:11px;
   border-radius:10px;
-  cursor:pointer;
   font-weight:bold;
 }
 
 .addCart:hover{
   background:#12a36a;
 }
-
-/* STATUS */
 
 .status{
   text-align:center;
@@ -280,12 +283,12 @@ nav a:hover{
   color:white;
 }
 
-/* CART MODAL */
+/* CART */
 
 .cartOverlay{
   position:fixed;
   inset:0;
-  background:#0008;
+  background:#0009;
   z-index:500;
   display:none;
 }
@@ -298,7 +301,7 @@ nav a:hover{
   position:absolute;
   right:0;
   top:0;
-  width:min(430px,100%);
+  width:min(470px,100%);
   height:100%;
   background:white;
   padding:22px;
@@ -319,7 +322,6 @@ nav a:hover{
   width:38px;
   height:38px;
   border-radius:50%;
-  cursor:pointer;
   font-size:20px;
 }
 
@@ -366,14 +368,13 @@ nav a:hover{
   width:28px;
   height:28px;
   border-radius:7px;
-  cursor:pointer;
 }
 
 .remove{
   border:0;
   background:none;
   color:#d33;
-  cursor:pointer;
+  padding:0;
   margin-top:7px;
 }
 
@@ -398,9 +399,111 @@ nav a:hover{
   color:white;
   padding:14px;
   border-radius:10px;
-  cursor:pointer;
   font-weight:bold;
   font-size:16px;
+}
+
+.emptyCart{
+  text-align:center;
+  padding:50px 10px;
+  color:#777;
+}
+
+/* ORDER FORM */
+
+.orderForm{
+  display:none;
+  margin-top:25px;
+  border-top:2px solid #eee;
+  padding-top:22px;
+}
+
+.orderForm.show{
+  display:block;
+}
+
+.orderForm h3{
+  margin-top:0;
+}
+
+.field{
+  margin-bottom:14px;
+}
+
+.field label{
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.field input,
+.field textarea{
+  width:100%;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:12px;
+  outline:none;
+  background:#fafafa;
+}
+
+.field input:focus,
+.field textarea:focus{
+  border-color:#12a36a;
+  background:white;
+}
+
+.field textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.submitOrder{
+  width:100%;
+  border:0;
+  background:#07130f;
+  color:white;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.submitOrder:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* SUCCESS */
+
+.successBox{
+  display:none;
+  text-align:center;
+  padding:25px 10px;
+}
+
+.successBox.show{
+  display:block;
+}
+
+.successIcon{
+  font-size:55px;
+}
+
+.orderNumber{
+  color:#12a36a;
+  font-size:22px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.continueBtn{
+  border:0;
+  background:#07130f;
+  color:white;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:bold;
 }
 
 /* FOOTER */
@@ -468,6 +571,10 @@ footer a{
     display:block;
   }
 
+  .hero{
+    padding:50px 0;
+  }
+
 }
 
 </style>
@@ -479,4 +586,439 @@ footer a{
 
 <header>
 
-<div class="
+  <div class="wrap nav">
+
+    <a href="#" class="brand">
+      SPORT_<b>SHAKIBI</b>
+    </a>
+
+    <nav>
+      <a href="#products">محصولات</a>
+      <a href="#categories">دسته‌بندی</a>
+      <a href="#contact">ارتباط با ما</a>
+    </nav>
+
+    <button class="cartBtn" id="openCart">
+      🛒 سبد خرید
+      <span class="cartCount" id="cartCount">0</span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="wrap heroGrid">
+
+    <div>
+
+      <h1>
+        استایل ورزشی
+        <em>حرفه‌ای</em>
+      </h1>
+
+      <p>
+        جدیدترین کیت‌های فوتبال، لباس‌های NBA
+        و پوشاک اسپرت مردانه و زنانه
+        با کیفیت وارداتی.
+      </p>
+
+      <a href="#products" class="btn">
+        مشاهده محصولات
+      </a>
+
+    </div>
+
+    <div class="art">
+      ⚽️🏀👕
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="sec" id="categories">
+
+  <div class="wrap">
+
+    <h2>دسته‌بندی محصولات</h2>
+
+    <div class="cats">
+
+      <div class="cat">
+        ⚽
+        <b>کیت فوتبال</b>
+      </div>
+
+      <div class="cat">
+        🏀
+        <b>NBA</b>
+      </div>
+
+      <div class="cat">
+        👕
+        <b>مردانه</b>
+      </div>
+
+      <div class="cat">
+        👚
+        <b>زنانه</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="sec" id="products">
+
+  <div class="wrap">
+
+    <h2>محصولات</h2>
+
+    <div class="grid" id="productsGrid">
+
+      <div class="status">
+        در حال دریافت محصولات...
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="sec" id="contact">
+
+  <div class="wrap">
+
+    <div class="banner">
+
+      <div>
+        <h2>SPORT_SHAKIBI</h2>
+
+        <p>
+          کیتی که می‌پوشی، استایلی که می‌سازی.
+        </p>
+
+        <p>
+          📱 09388529267
+        </p>
+      </div>
+
+      <a
+        class="btn"
+        href="https://t.me/sportshakibi_bu"
+        target="_blank"
+      >
+        تلگرام
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CART -->
+
+<div class="cartOverlay" id="cartOverlay">
+
+  <div class="cartPanel">
+
+    <div class="cartHeader">
+
+      <h2>🛒 سبد خرید</h2>
+
+      <button
+        class="closeCart"
+        id="closeCart"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div id="cartContent">
+
+      <div class="emptyCart">
+        سبد خرید شما خالی است.
+      </div>
+
+    </div>
+
+
+    <div class="cartBottom" id="cartBottom">
+
+      <div class="total">
+
+        <span>مجموع:</span>
+
+        <span id="cartTotal">
+          ۰ تومان
+        </span>
+
+      </div>
+
+
+      <button
+        class="checkout"
+        id="checkoutBtn"
+      >
+        ادامه و ثبت سفارش
+      </button>
+
+
+      <!-- ORDER FORM -->
+
+      <form
+        class="orderForm"
+        id="orderForm"
+      >
+
+        <h3>
+          اطلاعات گیرنده
+        </h3>
+
+        <div class="field">
+
+          <label>
+            نام و نام خانوادگی
+          </label>
+
+          <input
+            type="text"
+            id="customerName"
+            required
+            placeholder="مثلاً پویا شکیبی"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            شماره موبایل
+          </label>
+
+          <input
+            type="tel"
+            id="customerPhone"
+            required
+            placeholder="مثلاً 09388529267"
+            inputmode="tel"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            آدرس کامل
+          </label>
+
+          <textarea
+            id="customerAddress"
+            required
+            placeholder="استان، شهر، خیابان، کوچه، پلاک..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submitOrder"
+          id="submitOrder"
+        >
+          ثبت نهایی سفارش
+        </button>
+
+      </form>
+
+
+      <!-- SUCCESS -->
+
+      <div
+        class="successBox"
+        id="successBox"
+      >
+
+        <div class="successIcon">
+          ✅
+        </div>
+
+        <h3>
+          سفارش شما با موفقیت ثبت شد
+        </h3>
+
+        <div
+          class="orderNumber"
+          id="orderNumber"
+        ></div>
+
+        <p>
+          سفارش شما برای بررسی ثبت شد.
+        </p>
+
+        <button
+          class="continueBtn"
+          id="continueBtn"
+        >
+          ادامه خرید
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="wrap">
+
+    <strong>
+      SPORT_SHAKIBI
+    </strong>
+
+    <p>
+      کیفیتی که می‌ماند.
+    </p>
+
+    <p>
+      © تمامی حقوق محفوظ است.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+const CART_KEY = "sport_shakibi_cart";
+
+let products = [];
+
+let cart = JSON.parse(
+  localStorage.getItem(CART_KEY) || "[]"
+);
+
+
+// ELEMENTS
+
+const productsGrid =
+  document.getElementById("productsGrid");
+
+const cartOverlay =
+  document.getElementById("cartOverlay");
+
+const cartContent =
+  document.getElementById("cartContent");
+
+const cartCount =
+  document.getElementById("cartCount");
+
+const cartTotal =
+  document.getElementById("cartTotal");
+
+const checkoutBtn =
+  document.getElementById("checkoutBtn");
+
+const orderForm =
+  document.getElementById("orderForm");
+
+const successBox =
+  document.getElementById("successBox");
+
+
+// SAVE CART
+
+function saveCart(){
+
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cart)
+  );
+
+}
+
+
+// FORMAT PRICE
+
+function formatPrice(value){
+
+  const number =
+    Number(
+      String(value)
+        .replace(/[^\d]/g,"")
+    ) || 0;
+
+  return number.toLocaleString("fa-IR");
+
+}
+
+
+// PRICE NUMBER
+
+function priceNumber(value){
+
+  return Number(
+    String(value)
+      .replace(/[^\d]/g,"")
+  ) || 0;
+
+}
+
+
+// UPDATE COUNT
+
+function updateCartCount(){
+
+  const count =
+    cart.reduce(
+      (sum,item) =>
+        sum + Number(item.qty || 0),
+      0
+    );
+
+  cartCount.textContent =
+    count.toLocaleString("fa-IR");
+
+}
+
+
+// ADD TO CART
+
+function addToCart(product){
+
+  const found =
+    cart.find(
+      item =>
+        String(item.id) ===
+        String(product.id)
+    );
