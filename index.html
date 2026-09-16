@@ -1,10 +1,538 @@
-<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SPORT_SHAKIBI | فروشگاه لباس ورزشی</title>
-<style>body{margin:0;background:#f4f7f5;color:#10201a;font-family:Tahoma}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,92%);margin:auto}header{background:#07130f;color:#fff}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:21px}.brand b{color:#22c982}nav{display:flex;gap:22px;font-size:14px}.admin{background:#12a36a;padding:9px 13px;border-radius:9px}.hero{background:linear-gradient(120deg,#07130f,#0b3828,#12a36a);color:#fff;padding:75px 0}.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.hero h1{font-size:46px;line-height:1.3}.hero em{color:#22c982;font-style:normal}.hero p{line-height:2;font-size:17px}.btn{display:inline-block;background:#fff;color:#08794d;padding:13px 20px;border-radius:10px;font-weight:bold}.art{height:280px;border-radius:25px;background:#06110c;display:grid;place-items:center;font-size:75px}.sec{padding:50px 0}.cats,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.cat,.card,.banner{background:#fff;border-radius:17px;box-shadow:0 5px 20px #1231}.cat{text-align:center;padding:28px;font-size:40px}.cat b{display:block;font-size:15px;margin-top:10px}.card{overflow:hidden}.photo{height:200px;background:#e5ece9;display:grid;place-items:center;font-size:70px}.info{padding:15px}.price{font-weight:900;font-size:18px;margin:10px 0}.order{display:block;background:#07130f;color:#fff;text-align:center;padding:10px;border-radius:9px}.banner{padding:28px;display:flex;justify-content:space-between;align-items:center}.banner .btn{background:#12a36a;color:#fff}footer{background:#07130f;color:#b9c8c1;padding:35px 0}@media(max-width:760px){nav{display:none}.heroGrid{grid-template-columns:1fr}.hero h1{font-size:35px}.cats,.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:450px){.cats,.grid{grid-template-columns:1fr}.banner{display:block}}
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SPORT_SHAKIBI | فروشگاه لباس ورزشی</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#f4f7f5;
+  color:#10201a;
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.wrap{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+header{
+  background:#07130f;
+  color:#fff;
+}
+
+.nav{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  font-weight:900;
+  font-size:21px;
+}
+
+.brand b{
+  color:#22c982;
+}
+
+nav{
+  display:flex;
+  gap:22px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#22c982;
+}
+
+.admin{
+  background:#12a36a;
+  padding:9px 13px;
+  border-radius:9px;
+}
+
+.hero{
+  background:linear-gradient(120deg,#07130f,#0b3828,#12a36a);
+  color:#fff;
+  padding:75px 0;
+}
+
+.heroGrid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:46px;
+  line-height:1.3;
+}
+
+.hero em{
+  color:#22c982;
+  font-style:normal;
+}
+
+.hero p{
+  line-height:2;
+  font-size:17px;
+}
+
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#08794d;
+  padding:13px 20px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.art{
+  height:280px;
+  border-radius:25px;
+  background:#06110c;
+  display:grid;
+  place-items:center;
+  font-size:75px;
+}
+
+.sec{
+  padding:50px 0;
+}
+
+.cats,
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.cat,
+.card,
+.banner{
+  background:#fff;
+  border-radius:17px;
+  box-shadow:0 5px 20px #1231;
+}
+
+.cat{
+  text-align:center;
+  padding:28px;
+  font-size:40px;
+}
+
+.cat b{
+  display:block;
+  font-size:15px;
+  margin-top:10px;
+}
+
+.card{
+  overflow:hidden;
+}
+
+.photo{
+  height:200px;
+  background:#e5ece9;
+  display:grid;
+  place-items:center;
+  font-size:70px;
+}
+
+.info{
+  padding:15px;
+}
+
+.info h3{
+  margin:8px 0;
+}
+
+.price{
+  font-weight:900;
+  font-size:18px;
+  margin:10px 0;
+}
+
+.order{
+  display:block;
+  background:#07130f;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  border-radius:9px;
+}
+
+.order:hover{
+  background:#12a36a;
+}
+
+.status{
+  text-align:center;
+  padding:30px;
+  background:#fff;
+  border-radius:15px;
+  color:#68756f;
+}
+
+.banner{
+  padding:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.banner .btn{
+  background:#12a36a;
+  color:#fff;
+}
+
+footer{
+  background:#07130f;
+  color:#b9c8c1;
+  padding:35px 0;
+}
+
+footer a{
+  color:#22c982;
+}
+
+@media(max-width:760px){
+
+  nav{
+    display:none;
+  }
+
+  .heroGrid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .cats,
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:450px){
+
+  .cats,
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .banner{
+    display:block;
+  }
+
+  .banner .btn{
+    margin-top:15px;
+  }
+
+}
+
 </style>
-<header><div class="wrap nav"><div class="brand">SPORT_<b>SHAKIBI</b></div><nav><a href="#products">محصولات</a><a href="#categories">دسته‌بندی</a><a href="#contact">تماس</a></nav><a class="admin" href="login.html">⚙️ مدیریت</a></div></header>
-<section class="hero"><div class="wrap heroGrid"><div><h1>استایل ورزشی،<br><em>با کیفیتی که می‌ماند.</em></h1><p>کیت‌های فوتبال، NBA و لباس‌های اسپرت زنانه و مردانه.</p><a class="btn" href="#products">مشاهده محصولات</a></div><div class="art">⚽ 🏀 👕</div></div></section>
-<section id="categories" class="wrap sec"><h2>دسته‌بندی‌ها</h2><div class="cats"><div class="cat">⚽<b>کیت فوتبال</b></div><div class="cat">🏀<b>NBA</b></div><div class="cat">👕<b>اسپرت مردانه</b></div><div class="cat">🧥<b>اسپرت زنانه</b></div></div></section>
-<section id="products" class="wrap sec"><h2>محصولات</h2><div id="grid" class="grid"></div></section>
-<section id="contact" class="wrap sec"><div class="banner"><div><h2>ارسال به سراسر ایران 📦</h2><p>برای سفارش با ما در تلگرام در ارتباط باشید.</p></div><a class="btn" href="https://t.me/sportshakibi_bu">تلگرام</a></div></section>
-<footer><div class="wrap"><b>SPORT_SHAKIBI</b><p>Telegram: sportshakibi_bu · Instagram: SPORT_SHAKIBI · 09388529267</p></div></footer>
-<script>async function load(){let r=await fetch("/api/products");let p=await r.json();grid.innerHTML=p.map(x=>`<article class="card"><div class="photo">${x.emoji||"👕"}</div><div class="info"><small>${x.category}</small><h3>${x.name}</h3><div class="price">${x.price} تومان</div><a class="order" href="https://t.me/sportshakibi_bu">سفارش در تلگرام</a></div></article>`).join("")}load()</script>
+</head>
+
+<body>
+
+<header>
+
+<div class="wrap nav">
+
+<div class="brand">
+SPORT_<b>SHAKIBI</b>
+</div>
+
+<nav>
+<a href="#products">محصولات</a>
+<a href="#categories">دسته‌بندی</a>
+<a href="#contact">تماس</a>
+</nav>
+
+<a class="admin" href="login.html">
+⚙️ مدیریت
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="wrap heroGrid">
+
+<div>
+
+<h1>
+استایل ورزشی،
+<br>
+<em>با کیفیتی که می‌ماند.</em>
+</h1>
+
+<p>
+کیت‌های فوتبال، NBA و لباس‌های اسپرت زنانه و مردانه.
+</p>
+
+<a class="btn" href="#products">
+مشاهده محصولات
+</a>
+
+</div>
+
+<div class="art">
+⚽ 🏀 👕
+</div>
+
+</div>
+
+</section>
+
+
+<section id="categories" class="wrap sec">
+
+<h2>
+دسته‌بندی‌ها
+</h2>
+
+<div class="cats">
+
+<div class="cat">
+⚽
+<b>کیت فوتبال</b>
+</div>
+
+<div class="cat">
+🏀
+<b>NBA</b>
+</div>
+
+<div class="cat">
+👕
+<b>اسپرت مردانه</b>
+</div>
+
+<div class="cat">
+🧥
+<b>اسپرت زنانه</b>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="products" class="wrap sec">
+
+<h2>
+محصولات
+</h2>
+
+<div id="grid" class="grid">
+
+<div id="loading" class="status">
+در حال دریافت محصولات...
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="wrap sec">
+
+<div class="banner">
+
+<div>
+
+<h2>
+ارسال به سراسر ایران 📦
+</h2>
+
+<p>
+برای سفارش با ما در تلگرام در ارتباط باشید.
+</p>
+
+</div>
+
+<a
+class="btn"
+href="https://t.me/sportshakibi_bu"
+target="_blank"
+>
+تلگرام
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="wrap">
+
+<b>
+SPORT_SHAKIBI
+</b>
+
+<p>
+Telegram:
+<a href="https://t.me/sportshakibi_bu" target="_blank">
+@sportshakibi_bu
+</a>
+</p>
+
+<p>
+Instagram: SPORT_SHAKIBI
+</p>
+
+<p>
+📞 09388529267
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const gridElement = document.getElementById("grid");
+
+
+function createProduct(product){
+
+  const card = document.createElement("article");
+  card.className = "card";
+
+
+  const photo = document.createElement("div");
+  photo.className = "photo";
+  photo.textContent = product.emoji || "👕";
+
+
+  const info = document.createElement("div");
+  info.className = "info";
+
+
+  const category = document.createElement("small");
+  category.textContent = product.category || "اسپرت";
+
+
+  const name = document.createElement("h3");
+  name.textContent = product.name || "محصول";
+
+
+  const price = document.createElement("div");
+  price.className = "price";
+  price.textContent =
+    (product.price || "0") + " تومان";
+
+
+  const order = document.createElement("a");
+  order.className = "order";
+  order.href = "https://t.me/sportshakibi_bu";
+  order.target = "_blank";
+  order.textContent = "سفارش در تلگرام";
+
+
+  info.appendChild(category);
+  info.appendChild(name);
+  info.appendChild(price);
+  info.appendChild(order);
+
+  card.appendChild(photo);
+  card.appendChild(info);
+
+  return card;
+
+}
+
+
+async function loadProducts(){
+
+  try{
+
+    const response = await fetch(
+      "/api/products",
+      {
+        method:"GET",
+        credentials:"include"
+      }
+    );
+
+
+    if(!response.ok){
+
+      throw new Error("API Error");
+
+    }
+
+
+    const products = await response.json();
+
+
+    gridElement.innerHTML = "";
+
+
+    if(!Array.isArray(products) || products.length === 0){
+
+      gridElement.innerHTML =
+        '<div class="status">هنوز محصولی برای نمایش ثبت نشده است.</div>';
+
+      return;
+
+    }
+
+
+    products.forEach(function(product){
+
+      gridElement.appendChild(
+        createProduct(product)
+      );
+
+    });
+
+
+  }catch(error){
+
+    console.error(error);
+
+    gridElement.innerHTML =
+      '<div class="status">فعلاً دریافت محصولات امکان‌پذیر نیست.</div>';
+
+  }
+
+}
+
+
+loadProducts();
+
+</script>
+
+</body>
+</html>
