@@ -1,4 +1,259 @@
-<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ورود مدیریت | SPORT_SHAKIBI</title>
-<style>body{margin:0;background:#f3f7f5;font-family:Tahoma;display:grid;place-items:center;min-height:100vh}.box{width:min(400px,88%);background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 35px #0002}h1{font-size:23px}.brand{font-weight:900}.brand b{color:#12a36a}input,button{width:100%;padding:13px;margin:7px 0;border-radius:10px;border:1px solid #d5dfdb;font:inherit}button{background:#12a36a;color:#fff;border:0;font-weight:bold}.err{color:#c33;font-size:13px;min-height:22px}</style>
-<div class="box"><div class="brand">SPORT_<b>SHAKIBI</b></div><h1>ورود به پنل مدیریت</h1><input id="u" placeholder="نام کاربری"><input id="p" type="password" placeholder="رمز عبور"><button onclick="login()">ورود</button><div class="err" id="e"></div><a href="index.html">بازگشت به فروشگاه</a></div>
-<script>async function login(){e.textContent="";let r=await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:u.value,password:p.value})});if(r.ok)location.href="admin.html";else e.textContent=(await r.json()).error||"خطا در ورود"}</script>
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>ورود مدیریت | SPORT_SHAKIBI</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#f3f7f5;
+  color:#10201a;
+  font-family:Tahoma,Arial,sans-serif;
+  display:grid;
+  place-items:center;
+  min-height:100vh;
+}
+
+.box{
+  width:min(400px,88%);
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 35px #0002;
+}
+
+.brand{
+  font-weight:900;
+  font-size:20px;
+}
+
+.brand b{
+  color:#12a36a;
+}
+
+h1{
+  font-size:23px;
+}
+
+input,
+button{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border-radius:10px;
+  border:1px solid #d5dfdb;
+  font:inherit;
+}
+
+input:focus{
+  outline:2px solid #12a36a55;
+  border-color:#12a36a;
+}
+
+button{
+  background:#12a36a;
+  color:#fff;
+  border:0;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+.err{
+  color:#c33;
+  font-size:13px;
+  min-height:22px;
+  margin-top:8px;
+}
+
+.back{
+  display:inline-block;
+  margin-top:10px;
+  color:#08794d;
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <div class="brand">
+    SPORT_<b>SHAKIBI</b>
+  </div>
+
+  <h1>
+    ورود به پنل مدیریت
+  </h1>
+
+  <form id="loginForm">
+
+    <input
+      id="username"
+      type="text"
+      placeholder="نام کاربری"
+      autocomplete="username"
+      required
+    >
+
+    <input
+      id="password"
+      type="password"
+      placeholder="رمز عبور"
+      autocomplete="current-password"
+      required
+    >
+
+    <button
+      id="loginBtn"
+      type="submit"
+    >
+      ورود
+    </button>
+
+  </form>
+
+  <div
+    class="err"
+    id="errorMessage"
+  ></div>
+
+  <a
+    class="back"
+    href="index.html"
+  >
+    بازگشت به فروشگاه
+  </a>
+
+</div>
+
+
+<script>
+
+const loginForm =
+  document.getElementById("loginForm");
+
+const usernameInput =
+  document.getElementById("username");
+
+const passwordInput =
+  document.getElementById("password");
+
+const loginBtn =
+  document.getElementById("loginBtn");
+
+const errorMessage =
+  document.getElementById("errorMessage");
+
+
+loginForm.addEventListener("submit", async function(event){
+
+  event.preventDefault();
+
+  errorMessage.textContent = "";
+
+  const username =
+    usernameInput.value.trim();
+
+  const password =
+    passwordInput.value;
+
+
+  if(!username || !password){
+
+    errorMessage.textContent =
+      "نام کاربری و رمز عبور را وارد کنید.";
+
+    return;
+
+  }
+
+
+  loginBtn.disabled = true;
+  loginBtn.textContent = "در حال ورود...";
+
+
+  try{
+
+    const response = await fetch(
+      "/api/login",
+      {
+        method:"POST",
+
+        credentials:"include",
+
+        headers:{
+          "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+          username:username,
+          password:password
+        })
+      }
+    );
+
+
+    if(response.ok){
+
+      window.location.href =
+        "admin.html";
+
+      return;
+
+    }
+
+
+    let message =
+      "نام کاربری یا رمز عبور اشتباه است.";
+
+    try{
+
+      const data =
+        await response.json();
+
+      if(data && data.error){
+        message = data.error;
+      }
+
+    }catch(e){}
+
+
+    errorMessage.textContent = message;
+
+
+  }catch(error){
+
+    console.error(error);
+
+    errorMessage.textContent =
+      "خطا در اتصال به سرور. دوباره تلاش کنید.";
+
+  }finally{
+
+    loginBtn.disabled = false;
+    loginBtn.textContent = "ورود";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
