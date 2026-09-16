@@ -1,2563 +1,1320 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>SPORT_SHAKIBI | فروشگاه لباس ورزشی</title>
-
-  <meta
-    name="description"
-    content="SPORT_SHAKIBI فروشگاه کیت فوتبال، لباس NBA و پوشاک اسپرت مردانه و زنانه"
-  >
-
-  <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
-      background: #f4f7f5;
-      color: #10201a;
-      line-height: 1.8;
-    }
-
-    body.lock {
-      overflow: hidden;
-    }
-
-    button,
-    input,
-    textarea,
-    select {
-      font-family: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: #07130f;
-      color: white;
-
-      box-shadow:
-        0 5px 25px rgba(0,0,0,.15);
-    }
-
-    .navbar {
-      min-height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #22c982;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      transition: .2s;
-    }
-
-    .nav-links a:hover {
-      color: #22c982;
-    }
-
-    .cart-button {
-      border: none;
-
-      background: #12a36a;
-      color: white;
-
-      padding: 10px 16px;
-      border-radius: 11px;
-
-      font-weight: bold;
-
-      transition: .2s;
-    }
-
-    .cart-button:hover {
-      background: #15915f;
-      transform: translateY(-1px);
-    }
-
-    .cart-count {
-      display: inline-flex;
-
-      min-width: 23px;
-      height: 23px;
-
-      align-items: center;
-      justify-content: center;
-
-      margin-right: 5px;
-
-      border-radius: 50%;
-
-      background: white;
-      color: #08794d;
-
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-
-      color: white;
-
-      padding: 90px 0;
-
-      background:
-        radial-gradient(
-          circle at 85% 20%,
-          rgba(34,201,130,.35),
-          transparent 32%
-        ),
-        linear-gradient(
-          125deg,
-          #07130f,
-          #0b3828,
-          #12a36a
-        );
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-
-      align-items: center;
-
-      gap: 50px;
-    }
-
-    .hero h1 {
-      font-size: clamp(35px, 5vw, 58px);
-      line-height: 1.35;
-
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #22c982;
-    }
-
-    .hero-text {
-      max-width: 650px;
-
-      font-size: 17px;
-      line-height: 2;
-
-      color: #e3eee9;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      margin-top: 30px;
-    }
-
-    .primary-button,
-    .secondary-button {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 13px 22px;
-
-      border-radius: 12px;
-
-      font-weight: bold;
-
-      transition: .2s;
-    }
-
-    .primary-button {
-      background: white;
-      color: #08794d;
-    }
-
-    .secondary-button {
-      background: rgba(255,255,255,.1);
-      color: white;
-
-      border: 1px solid rgba(255,255,255,.25);
-    }
-
-    .primary-button:hover,
-    .secondary-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      min-height: 330px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 30px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(0,0,0,.4),
-          rgba(0,0,0,.15)
-        );
-
-      border: 1px solid rgba(255,255,255,.12);
-
-      font-size: 90px;
-
-      box-shadow:
-        inset 0 0 50px rgba(0,0,0,.2);
-    }
-
-
-    /* =========================
-       SECTION
-    ========================= */
-
-    section {
-      scroll-margin-top: 90px;
-    }
-
-    .section {
-      padding: 65px 0;
-    }
-
-    .section-title {
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size: 29px;
-      margin-bottom: 5px;
-    }
-
-    .section-title p {
-      color: #68756f;
-    }
-
-
-    /* =========================
-       CATEGORIES
-    ========================= */
-
-    .categories {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 18px;
-    }
-
-    .category {
-      background: white;
-
-      border-radius: 20px;
-
-      padding: 30px 20px;
-
-      text-align: center;
-
-      box-shadow:
-        0 5px 22px rgba(18,48,36,.08);
-
-      transition: .25s;
-    }
-
-    .category:hover {
-      transform: translateY(-5px);
-      box-shadow:
-        0 12px 30px rgba(18,48,36,.12);
-    }
-
-    .category-icon {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .category h3 {
-      font-size: 16px;
-    }
-
-
-    /* =========================
-       FILTERS
-    ========================= */
-
-    .shop-toolbar {
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 15px;
-
-      margin-bottom: 25px;
-    }
-
-    .search-box {
-      flex: 1;
-
-      position: relative;
-    }
-
-    .search-box input {
-      width: 100%;
-
-      padding: 14px 17px;
-
-      border: 1px solid #dce5e1;
-      border-radius: 12px;
-
-      outline: none;
-
-      background: white;
-    }
-
-    .search-box input:focus {
-      border-color: #12a36a;
-    }
-
-    .filter-select {
-      padding: 13px 15px;
-
-      border: 1px solid #dce5e1;
-      border-radius: 12px;
-
-      background: white;
-
-      outline: none;
-    }
-
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 20px;
-    }
-
-    .product {
-      overflow: hidden;
-
-      background: white;
-
-      border-radius: 19px;
-
-      box-shadow:
-        0 5px 22px rgba(18,48,36,.08);
-
-      transition: .25s;
-    }
-
-    .product:hover {
-      transform: translateY(-4px);
-    }
-
-    .product-image {
-      height: 275px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      overflow: hidden;
-
-      background: #e8efec;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: .3s;
-    }
-
-    .product:hover img {
-      transform: scale(1.04);
-    }
-
-    .product-placeholder {
-      font-size: 75px;
-    }
-
-    .product-info {
-      padding: 17px;
-    }
-
-    .product-category {
-      color: #12a36a;
-
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .product-name {
-      margin: 7px 0;
-
-      font-size: 17px;
-    }
-
-    .product-price {
-      font-size: 18px;
-      font-weight: 900;
-
-      margin: 12px 0;
-    }
-
-    .add-cart {
-      width: 100%;
-
-      border: none;
-
-      padding: 12px;
-
-      border-radius: 10px;
-
-      background: #07130f;
-      color: white;
-
-      font-weight: bold;
-
-      transition: .2s;
-    }
-
-    .add-cart:hover {
-      background: #12a36a;
-    }
-
-    .empty-products {
-      grid-column: 1 / -1;
-
-      text-align: center;
-
-      background: white;
-
-      padding: 45px;
-
-      border-radius: 16px;
-
-      color: #68756f;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-box {
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 25px;
-
-      padding: 32px;
-
-      background: white;
-
-      border-radius: 22px;
-
-      box-shadow:
-        0 5px 22px rgba(18,48,36,.08);
-    }
-
-    .contact-box h2 {
-      margin-bottom: 5px;
-    }
-
-    .contact-box p {
-      color: #68756f;
-    }
-
-    .telegram-button {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 13px 22px;
-
-      border-radius: 11px;
-
-      background: #12a36a;
-      color: white;
-
-      font-weight: bold;
-    }
-
-
-    /* =========================
-       CART OVERLAY
-    ========================= */
-
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-
-      z-index: 5000;
-
-      display: none;
-
-      background: rgba(0,0,0,.65);
-    }
-
-    .cart-overlay.active {
-      display: block;
-    }
-
-    .cart-panel {
-      position: absolute;
-
-      top: 0;
-      right: 0;
-
-      width: min(480px, 100%);
-      height: 100%;
-
-      overflow-y: auto;
-
-      padding: 22px;
-
-      background: white;
-    }
-
-    .cart-header {
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      padding-bottom: 15px;
-
-      border-bottom: 1px solid #eee;
-    }
-
-    .close-cart {
-      width: 40px;
-      height: 40px;
-
-      border: none;
-
-      border-radius: 50%;
-
-      background: #eee;
-
-      font-size: 21px;
-    }
-
-    .cart-item {
-      display: flex;
-
-      gap: 12px;
-
-      padding: 16px 0;
-
-      border-bottom: 1px solid #eee;
-    }
-
-    .cart-item-image {
-      width: 75px;
-      height: 75px;
-
-      flex-shrink: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      overflow: hidden;
-
-      border-radius: 10px;
-
-      background: #e8efec;
-    }
-
-    .cart-item-image img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-    }
-
-    .cart-item-image span {
-      font-size: 35px;
-    }
-
-    .cart-item-details {
-      flex: 1;
-    }
-
-    .cart-item-details h4 {
-      margin-bottom: 5px;
-    }
-
-    .quantity {
-      display: flex;
-
-      align-items: center;
-
-      gap: 8px;
-
-      margin-top: 8px;
-    }
-
-    .quantity button {
-      width: 29px;
-      height: 29px;
-
-      border: none;
-
-      border-radius: 7px;
-
-      background: #07130f;
-      color: white;
-    }
-
-    .remove-item {
-      border: none;
-
-      background: transparent;
-
-      color: #d33;
-
-      margin-top: 5px;
-    }
-
-    .cart-footer {
-      padding-top: 20px;
-
-      border-top: 2px solid #eee;
-
-      margin-top: 20px;
-    }
-
-    .cart-total {
-      display: flex;
-
-      justify-content: space-between;
-
-      font-size: 20px;
-
-      font-weight: 900;
-    }
-
-    .checkout-button {
-      width: 100%;
-
-      margin-top: 15px;
-
-      border: none;
-
-      padding: 14px;
-
-      border-radius: 11px;
-
-      background: #12a36a;
-      color: white;
-
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .empty-cart {
-      padding: 60px 10px;
-
-      text-align: center;
-
-      color: #777;
-    }
-
-
-    /* =========================
-       ORDER FORM
-    ========================= */
-
-    .order-form {
-      display: none;
-
-      margin-top: 25px;
-
-      padding-top: 25px;
-
-      border-top: 2px solid #eee;
-    }
-
-    .order-form.active {
-      display: block;
-    }
-
-    .order-form h3 {
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-
-      margin-bottom: 6px;
-
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-
-      padding: 12px;
-
-      border: 1px solid #ddd;
-
-      border-radius: 10px;
-
-      outline: none;
-
-      background: #fafafa;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #12a36a;
-
-      background: white;
-    }
-
-    .form-group textarea {
-      min-height: 95px;
-
-      resize: vertical;
-    }
-
-    .submit-order {
-      width: 100%;
-
-      border: none;
-
-      padding: 14px;
-
-      border-radius: 10px;
-
-      background: #07130f;
-      color: white;
-
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .submit-order:disabled {
-      opacity: .6;
-    }
-
-
-    /* =========================
-       SUCCESS
-    ========================= */
-
-    .success {
-      display: none;
-
-      padding: 40px 10px;
-
-      text-align: center;
-    }
-
-    .success.active {
-      display: block;
-    }
-
-    .success-icon {
-      font-size: 55px;
-    }
-
-    .order-number {
-      margin: 15px 0;
-
-      color: #12a36a;
-
-      font-size: 23px;
-      font-weight: 900;
-    }
-
-    .continue-shopping {
-      border: none;
-
-      margin-top: 10px;
-
-      padding: 12px 20px;
-
-      border-radius: 10px;
-
-      background: #07130f;
-      color: white;
-
-      font-weight: bold;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      margin-top: 20px;
-
-      padding: 45px 0;
-
-      background: #07130f;
-
-      color: #b9c8c1;
-
-      text-align: center;
-    }
-
-    footer strong {
-      color: white;
-
-      font-size: 20px;
-    }
-
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 950px) {
-
-      .products {
-        grid-template-columns:
-          repeat(3, 1fr);
-      }
-
-      .categories {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-    }
-
-
-    @media (max-width: 760px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        min-height: 230px;
-        font-size: 70px;
-      }
-
-      .products {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .product-image {
-        height: 230px;
-      }
-
-      .shop-toolbar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .contact-box {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-    }
-
-
-    @media (max-width: 470px) {
-
-      .container {
-        width: 94%;
-      }
-
-      .navbar {
-        min-height: 65px;
-      }
-
-      .logo {
-        font-size: 17px;
-      }
-
-      .cart-button {
-        padding: 9px 11px;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero-text {
-        font-size: 15px;
-      }
-
-      .hero-card {
-        min-height: 190px;
-        font-size: 55px;
-      }
-
-      .categories {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .category {
-        padding: 22px 10px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .product-image {
-        height: 300px;
-      }
-
-      .contact-box {
-        padding: 25px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPORT_SHAKIBI | فروشگاه لباس ورزشی</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma, Arial, sans-serif;
+    background:#f5f7f6;
+    color:#111;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111;
+    color:white;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:900;
+    color:#19d36b;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:white;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#19d36b;
+}
+
+.cart-btn{
+    border:0;
+    background:#19d36b;
+    color:#07130c;
+    padding:11px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    color:white;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#19d36b;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:2;
+    color:#ddd;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-green{
+    background:#19d36b;
+    color:#07130c;
+}
+
+.btn-dark{
+    border:1px solid #555;
+    color:white;
+    background:rgba(0,0,0,.4);
+}
+
+/* GENERAL */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#777;
+}
+
+/* CATEGORIES */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.category{
+    background:white;
+    padding:30px 15px;
+    border-radius:18px;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #eee;
+    transition:.25s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    border-color:#19d36b;
+}
+
+.category-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.category h3{
+    margin-bottom:8px;
+}
+
+.category p{
+    color:#777;
+    font-size:13px;
+}
+
+/* SEARCH */
+.shop-tools{
+    display:flex;
+    gap:12px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    background:white;
+}
+
+.filter{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    background:white;
+    min-width:150px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #eee;
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.product-img{
+    height:230px;
+    background:#eef2ef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-category{
+    color:#19a957;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.product h3{
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:10px;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.add-btn:hover{
+    background:#19d36b;
+    color:#111;
+}
+
+/* CART */
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:2000;
+    display:none;
+}
+
+.cart-overlay.active{
+    display:block;
+}
+
+.cart{
+    position:absolute;
+    top:0;
+    right:0;
+    width:min(430px,100%);
+    height:100%;
+    background:white;
+    padding:25px;
+    overflow-y:auto;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.close{
+    border:0;
+    background:#eee;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h4{
+    margin-bottom:7px;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.qty button{
+    width:30px;
+    height:30px;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.remove{
+    color:#e53935;
+    background:#ffebeb !important;
+}
+
+.cart-total{
+    margin-top:25px;
+    padding:20px;
+    border-radius:15px;
+    background:#f2f6f3;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#19d36b;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CHECKOUT */
+.checkout{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(0,0,0,.65);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.checkout.active{
+    display:flex;
+}
+
+.checkout-box{
+    width:min(500px,100%);
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.checkout-box h2{
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-family:inherit;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.submit-order{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#19d36b;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* SUCCESS */
+.success{
+    text-align:center;
+    padding:30px 10px;
+}
+
+.success-icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    padding:50px 20px 25px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#aaa;
+    line-height:2;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:#19d36b;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:35px;
+    padding-top:20px;
+    color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+}
+
+@media(max-width:550px){
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .navbar{
+        min-height:65px;
+    }
+
+    .hero{
+        min-height:420px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:50px 15px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<header>
+    <div class="navbar">
+        <div class="logo">
+            SPORT_<span>SHAKIBI</span>
+        </div>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+        <nav>
+            <a href="#home">خانه</a>
+            <a href="#categories">دسته‌بندی</a>
+            <a href="#products">محصولات</a>
+            <a href="#contact">تماس با ما</a>
+        </nav>
 
-  <header>
-
-    <div class="container navbar">
-
-      <a href="#" class="logo">
-        SPORT_<span>SHAKIBI</span>
-      </a>
-
-      <nav class="nav-links">
-
-        <a href="#products">
-          محصولات
-        </a>
-
-        <a href="#categories">
-          دسته‌بندی
-        </a>
-
-        <a href="#contact">
-          ارتباط با ما
-        </a>
-
-      </nav>
-
-      <button
-        type="button"
-        class="cart-button"
-        id="openCart"
-      >
-        🛒 سبد خرید
-
-        <span
-          class="cart-count"
-          id="cartCount"
-        >
-          ۰
-        </span>
-
-      </button>
-
+        <button class="cart-btn" onclick="openCart()">
+            🛒 سبد خرید
+            <span id="cartCount">0</span>
+        </button>
     </div>
+</header>
 
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero">
-
-    <div class="container hero-content">
-
-      <div>
-
+<section class="hero" id="home">
+    <div class="hero-content">
         <h1>
-          استایل ورزشی
-          <span>حرفه‌ای</span>
+            فروشگاه <span>SPORT_SHAKIBI</span>
         </h1>
 
-        <p class="hero-text">
-          جدیدترین کیت‌های فوتبال، لباس‌های NBA
-          و پوشاک اسپرت مردانه و زنانه.
-          کیفیت وارداتی با طراحی جذاب و مناسب استایل روزمره.
+        <p>
+            انواع کیت‌های فوتبالی، لباس‌های NBA و پوشاک اسپرت
+            با کیفیت بالا و طراحی خاص
         </p>
 
         <div class="hero-buttons">
+            <a href="#products" class="btn btn-green">
+                مشاهده محصولات
+            </a>
 
-          <a
-            href="#products"
-            class="primary-button"
-          >
-            مشاهده محصولات
-          </a>
-
-          <a
-            href="https://t.me/sportshakibi_bu"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="secondary-button"
-          >
-            📲 سفارش در تلگرام
-          </a>
-
+            <a href="https://t.me/sportshakibi_bu"
+               target="_blank"
+               class="btn btn-dark">
+                تلگرام SPORT_SHAKIBI
+            </a>
         </div>
+    </div>
+</section>
 
-      </div>
+<section class="container" id="categories">
 
-
-      <div class="hero-card">
-        ⚽ 🏀 👕
-      </div>
-
+    <div class="section-title">
+        <h2>دسته‌بندی محصولات</h2>
+        <p>محصول مورد نظرت رو انتخاب کن</p>
     </div>
 
-  </section>
+    <div class="categories">
 
-
-  <!-- =========================
-       CATEGORIES
-  ========================= -->
-
-  <section
-    class="section"
-    id="categories"
-  >
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          دسته‌بندی محصولات
-        </h2>
-
-        <p>
-          محصول موردنظرت را انتخاب کن
-        </p>
-
-      </div>
-
-
-      <div class="categories">
-
-        <div
-          class="category"
-          data-category="فوتبال"
-        >
-          <div class="category-icon">
-            ⚽
-          </div>
-
-          <h3>
-            کیت فوتبال
-          </h3>
+        <div class="category" onclick="setCategory('فوتبال')">
+            <div class="category-icon">⚽</div>
+            <h3>فوتبال</h3>
+            <p>کیت و لباس تیم‌ها</p>
         </div>
 
-
-        <div
-          class="category"
-          data-category="NBA"
-        >
-          <div class="category-icon">
-            🏀
-          </div>
-
-          <h3>
-            NBA
-          </h3>
+        <div class="category" onclick="setCategory('NBA')">
+            <div class="category-icon">🏀</div>
+            <h3>NBA</h3>
+            <p>لباس تیم‌های NBA</p>
         </div>
 
-
-        <div
-          class="category"
-          data-category="مردانه"
-        >
-          <div class="category-icon">
-            👕
-          </div>
-
-          <h3>
-            مردانه
-          </h3>
+        <div class="category" onclick="setCategory('مردانه')">
+            <div class="category-icon">👕</div>
+            <h3>مردانه</h3>
+            <p>پوشاک اسپرت مردانه</p>
         </div>
 
-
-        <div
-          class="category"
-          data-category="زنانه"
-        >
-          <div class="category-icon">
-            👚
-          </div>
-
-          <h3>
-            زنانه
-          </h3>
+        <div class="category" onclick="setCategory('زنانه')">
+            <div class="category-icon">👚</div>
+            <h3>زنانه</h3>
+            <p>پوشاک اسپرت زنانه</p>
         </div>
-
-      </div>
 
     </div>
+</section>
 
-  </section>
+<section class="container" id="products">
 
+    <div class="section-title">
+        <h2>محصولات</h2>
+        <p>جدیدترین محصولات SPORT_SHAKIBI</p>
+    </div>
 
-  <!-- =========================
-       PRODUCTS
-  ========================= -->
+    <div class="shop-tools">
 
-  <section
-    class="section"
-    id="products"
-  >
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          محصولات
-        </h2>
-
-        <p>
-          جدیدترین محصولات SPORT_SHAKIBI
-        </p>
-
-      </div>
-
-
-      <div class="shop-toolbar">
-
-        <div class="search-box">
-
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="جستجوی محصول..."
-          >
-
-        </div>
-
-
-        <select
-          class="filter-select"
-          id="categoryFilter"
+        <input
+            id="search"
+            class="search"
+            type="text"
+            placeholder="🔎 جستجوی محصول..."
+            oninput="renderProducts()"
         >
 
-          <option value="all">
-            همه دسته‌بندی‌ها
-          </option>
+        <select id="filter"
+                class="filter"
+                onchange="renderProducts()">
 
-          <option value="فوتبال">
-            ⚽ فوتبال
-          </option>
-
-          <option value="NBA">
-            🏀 NBA
-          </option>
-
-          <option value="مردانه">
-            👕 مردانه
-          </option>
-
-          <option value="زنانه">
-            👚 زنانه
-          </option>
+            <option value="همه">همه محصولات</option>
+            <option value="فوتبال">فوتبال</option>
+            <option value="NBA">NBA</option>
+            <option value="مردانه">مردانه</option>
+            <option value="زنانه">زنانه</option>
 
         </select>
 
-      </div>
-
-
-      <div
-        class="products"
-        id="productsContainer"
-      >
-      </div>
-
     </div>
 
-  </section>
+    <div class="products" id="productsGrid"></div>
 
+</section>
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+<footer id="contact">
 
-  <section
-    class="section"
-    id="contact"
-  >
-
-    <div class="container">
-
-      <div class="contact-box">
+    <div class="footer-content">
 
         <div>
-
-          <h2>
-            SPORT_SHAKIBI
-          </h2>
-
-          <p>
-            کیفیتی که می‌ماند.
-          </p>
-
-          <p>
-            📱 09388529267
-          </p>
-
+            <h3>SPORT_SHAKIBI</h3>
+            <p>
+                فروش تخصصی لباس‌های ورزشی، کیت‌های فوتبالی،
+                محصولات NBA و پوشاک اسپرت.
+            </p>
+            <p>کیفیتی که می‌ماند.</p>
         </div>
 
+        <div>
+            <h3>ارتباط با ما</h3>
 
-        <a
-          href="https://t.me/sportshakibi_bu"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="telegram-button"
-        >
-          📲 تلگرام
-        </a>
+            <p>
+                📞
+                <a href="tel:09388529267">
+                    09388529267
+                </a>
+            </p>
 
-      </div>
+            <p>
+                ✈️
+                <a href="https://t.me/sportshakibi_bu"
+                   target="_blank">
+                    کانال تلگرام
+                </a>
+            </p>
+        </div>
+
+        <div>
+            <h3>دسترسی سریع</h3>
+            <p><a href="#home">خانه</a></p>
+            <p><a href="#products">محصولات</a></p>
+            <p><a href="#categories">دسته‌بندی</a></p>
+        </div>
 
     </div>
 
-  </section>
+    <div class="copyright">
+        © 2026 SPORT_SHAKIBI - تمامی حقوق محفوظ است
+    </div>
+
+</footer>
 
 
-  <!-- =========================
-       CART
-  ========================= -->
+<!-- CART -->
 
-  <div
-    class="cart-overlay"
-    id="cartOverlay"
-  >
+<div class="cart-overlay" id="cartOverlay">
 
-    <div class="cart-panel">
+    <div class="cart">
 
-      <div class="cart-header">
+        <div class="cart-header">
+            <h2>سبد خرید</h2>
 
-        <h2>
-          🛒 سبد خرید
-        </h2>
+            <button class="close" onclick="closeCart()">
+                ✕
+            </button>
+        </div>
 
-        <button
-          type="button"
-          class="close-cart"
-          id="closeCart"
-        >
-          ×
-        </button>
-
-      </div>
-
-
-      <div id="cartContent">
-
-      </div>
-
-
-      <div
-        class="cart-footer"
-        id="cartFooter"
-      >
+        <div id="cartItems"></div>
 
         <div class="cart-total">
 
-          <span>
-            مجموع:
-          </span>
+            <div style="display:flex;justify-content:space-between">
+                <strong>مجموع:</strong>
+                <strong id="cartTotal">0 تومان</strong>
+            </div>
 
-          <span id="cartTotal">
-            ۰ تومان
-          </span>
-
-        </div>
-
-
-        <button
-          type="button"
-          class="checkout-button"
-          id="checkoutButton"
-        >
-          ادامه و ثبت سفارش
-        </button>
-
-
-        <!-- ORDER FORM -->
-
-        <form
-          class="order-form"
-          id="orderForm"
-        >
-
-          <h3>
-            اطلاعات گیرنده
-          </h3>
-
-
-          <div class="form-group">
-
-            <label>
-              نام و نام خانوادگی
-            </label>
-
-            <input
-              type="text"
-              id="customerName"
-              placeholder="مثلاً پویا شکیبی"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label>
-              شماره موبایل
-            </label>
-
-            <input
-              type="tel"
-              id="customerPhone"
-              placeholder="09388529267"
-              inputmode="tel"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label>
-              آدرس کامل
-            </label>
-
-            <textarea
-              id="customerAddress"
-              placeholder="استان، شهر، خیابان، کوچه، پلاک..."
-              required
-            ></textarea>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="submit-order"
-            id="submitOrder"
-          >
-            ثبت نهایی سفارش
-          </button>
-
-        </form>
-
-
-        <!-- SUCCESS -->
-
-        <div
-          class="success"
-          id="successBox"
-        >
-
-          <div class="success-icon">
-            ✅
-          </div>
-
-          <h3>
-            سفارش با موفقیت ثبت شد
-          </h3>
-
-          <div
-            class="order-number"
-            id="orderNumber"
-          >
-          </div>
-
-          <p>
-            سفارش شما برای بررسی ثبت شد.
-          </p>
-
-          <button
-            type="button"
-            class="continue-shopping"
-            id="continueShopping"
-          >
-            ادامه خرید
-          </button>
+            <button class="checkout-btn"
+                    onclick="openCheckout()">
+                ادامه و ثبت سفارش
+            </button>
 
         </div>
 
-      </div>
+    </div>
+
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div class="checkout" id="checkout">
+
+    <div class="checkout-box">
+
+        <div id="checkoutContent">
+
+            <div class="cart-header">
+                <h2>ثبت سفارش</h2>
+
+                <button class="close"
+                        onclick="closeCheckout()">
+                    ✕
+                </button>
+            </div>
+
+            <form onsubmit="submitOrder(event)">
+
+                <div class="form-group">
+                    <label>نام و نام خانوادگی</label>
+                    <input
+                        id="customerName"
+                        required
+                        placeholder="مثلاً پویا شکیبی"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>شماره موبایل</label>
+                    <input
+                        id="customerPhone"
+                        type="tel"
+                        required
+                        placeholder="09xxxxxxxxx"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>آدرس</label>
+                    <textarea
+                        id="customerAddress"
+                        required
+                        placeholder="آدرس کامل برای ارسال"
+                    ></textarea>
+                </div>
+
+                <button class="submit-order">
+                    ثبت نهایی سفارش
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+<script>
 
-  <footer>
+const products = [
 
-    <div class="container">
+    {
+        id:1,
+        name:"کیت پلیری رئال مادرید",
+        category:"فوتبال",
+        price:1940000,
+        icon:"⚽"
+    },
 
-      <strong>
-        SPORT_SHAKIBI
-      </strong>
+    {
+        id:2,
+        name:"کیت منچستر یونایتد",
+        category:"فوتبال",
+        price:1890000,
+        icon:"⚽"
+    },
 
-      <p>
-        کیفیتی که می‌ماند.
-      </p>
+    {
+        id:3,
+        name:"کیت بارسلونا",
+        category:"فوتبال",
+        price:1940000,
+        icon:"⚽"
+    },
 
-      <p>
-        © تمامی حقوق محفوظ است.
-      </p>
+    {
+        id:4,
+        name:"لباس NBA",
+        category:"NBA",
+        price:1750000,
+        icon:"🏀"
+    },
 
-    </div>
+    {
+        id:5,
+        name:"ست NBA",
+        category:"NBA",
+        price:2100000,
+        icon:"🏀"
+    },
 
-  </footer>
+    {
+        id:6,
+        name:"تیشرت اسپرت مردانه",
+        category:"مردانه",
+        price:980000,
+        icon:"👕"
+    },
 
+    {
+        id:7,
+        name:"هودی اسپرت مردانه",
+        category:"مردانه",
+        price:1450000,
+        icon:"🧥"
+    },
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    "use strict";
-
-
-    /* =========================
-       SAMPLE PRODUCTS
-
-       این محصولات برای جلوگیری از
-       صفحه سفید قرار داده شده‌اند.
-
-       بعداً می‌توانیم API واقعی
-       فروشگاه را جایگزین کنیم.
-    ========================= */
-
-    const products = [
-
-      {
-        id: 1,
-        name: "کیت رئال مادرید",
-        category: "فوتبال",
-        price: 1940000,
-        emoji: "⚽",
-        image: ""
-      },
-
-      {
-        id: 2,
-        name: "کیت منچستر یونایتد",
-        category: "فوتبال",
-        price: 1890000,
-        emoji: "⚽",
-        image: ""
-      },
-
-      {
-        id: 3,
-        name: "لباس NBA",
-        category: "NBA",
-        price: 1750000,
-        emoji: "🏀",
-        image: ""
-      },
-
-      {
-        id: 4,
-        name: "تیشرت اسپرت مردانه",
-        category: "مردانه",
-        price: 980000,
-        emoji: "👕",
-        image: ""
-      },
-
-      {
-        id: 5,
-        name: "هودی اسپرت مردانه",
-        category: "مردانه",
-        price: 1450000,
-        emoji: "🧥",
-        image: ""
-      },
-
-      {
-        id: 6,
-        name: "تیشرت اسپرت زنانه",
-        category: "زنانه",
-        price: 920000,
-        emoji: "👚",
-        image: ""
-      },
-
-      {
-        id: 7,
-        name: "کیت بارسلونا",
-        category: "فوتبال",
-        price: 1940000,
-        emoji: "⚽",
-        image: ""
-      },
-
-      {
-        id: 8,
-        name: "ست NBA",
-        category: "NBA",
-        price: 2100000,
-        emoji: "🏀",
-        image: ""
-      }
-
-    ];
-
-
-    /* =========================
-       CART
-    ========================= */
-
-    const CART_KEY =
-      "SPORT_SHAKIBI_CART";
-
-
-    let cart = [];
-
-
-    try {
-
-      const savedCart =
-        localStorage.getItem(CART_KEY);
-
-      if (savedCart) {
-
-        const parsed =
-          JSON.parse(savedCart);
-
-        if (Array.isArray(parsed)) {
-          cart = parsed;
-        }
-
-      }
-
-    } catch (error) {
-
-      console.error(
-        "Cart loading error:",
-        error
-      );
-
-      cart = [];
-
+    {
+        id:8,
+        name:"تیشرت اسپرت زنانه",
+        category:"زنانه",
+        price:920000,
+        icon:"👚"
     }
 
-
-    /* =========================
-       ELEMENTS
-    ========================= */
-
-    const productsContainer =
-      document.getElementById(
-        "productsContainer"
-      );
-
-    const searchInput =
-      document.getElementById(
-        "searchInput"
-      );
-
-    const categoryFilter =
-      document.getElementById(
-        "categoryFilter"
-      );
-
-    const cartCount =
-      document.getElementById(
-        "cartCount"
-      );
-
-    const cartOverlay =
-      document.getElementById(
-        "cartOverlay"
-      );
-
-    const cartContent =
-      document.getElementById(
-        "cartContent"
-      );
-
-    const cartTotal =
-      document.getElementById(
-        "cartTotal"
-      );
-
-    const checkoutButton =
-      document.getElementById(
-        "checkoutButton"
-      );
-
-    const orderForm =
-      document.getElementById(
-        "orderForm"
-      );
-
-    const successBox =
-      document.getElementById(
-        "successBox"
-      );
+];
 
 
-    /* =========================
-       HELPERS
-    ========================= */
-
-    function formatPrice(price) {
-
-      return Number(price || 0)
-        .toLocaleString("fa-IR");
-
-    }
+let cart =
+    JSON.parse(localStorage.getItem("SPORT_SHAKIBI_CART")) || [];
 
 
-    function saveCart() {
+function saveCart(){
 
-      try {
+    localStorage.setItem(
+        "SPORT_SHAKIBI_CART",
+        JSON.stringify(cart)
+    );
 
-        localStorage.setItem(
-          CART_KEY,
-          JSON.stringify(cart)
-        );
-
-      } catch (error) {
-
-        console.error(
-          "Cart save error:",
-          error
-        );
-
-      }
-
-    }
+}
 
 
-    function updateCartCount() {
+function formatPrice(price){
 
-      const count =
-        cart.reduce(
-          (total, item) =>
-            total + Number(item.qty || 0),
-          0
-        );
+    return price.toLocaleString("fa-IR") + " تومان";
 
-      cartCount.textContent =
-        count.toLocaleString("fa-IR");
-
-    }
+}
 
 
-    /* =========================
-       RENDER PRODUCTS
-    ========================= */
+function renderProducts(){
 
-    function renderProducts() {
+    const grid =
+        document.getElementById("productsGrid");
 
-      const search =
-        searchInput.value
-          .trim()
-          .toLowerCase();
+    const search =
+        document.getElementById("search")
+        .value
+        .trim()
+        .toLowerCase();
 
-      const category =
-        categoryFilter.value;
+    const filter =
+        document.getElementById("filter").value;
 
 
-      const filteredProducts =
+    const filtered =
         products.filter(product => {
 
-          const matchesSearch =
-            product.name
-              .toLowerCase()
-              .includes(search);
+            const matchSearch =
+                product.name
+                .toLowerCase()
+                .includes(search);
 
-          const matchesCategory =
-            category === "all" ||
-            product.category === category;
+            const matchCategory =
+                filter === "همه" ||
+                product.category === filter;
 
-          return (
-            matchesSearch &&
-            matchesCategory
-          );
+            return matchSearch && matchCategory;
 
         });
 
 
-      if (!filteredProducts.length) {
+    if(filtered.length === 0){
 
-        productsContainer.innerHTML = `
-
-          <div class="empty-products">
-
-            🔍
-
-            <br><br>
-
-            محصولی با این مشخصات پیدا نشد.
-
-          </div>
-
+        grid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px;
+                background:white;
+                border-radius:15px;
+            ">
+                محصولی پیدا نشد.
+            </div>
         `;
 
         return;
 
-      }
+    }
 
 
-      productsContainer.innerHTML =
-        filteredProducts
-          .map(product => {
+    grid.innerHTML =
+        filtered.map(product => `
 
-            const image =
-              product.image
-                ? `
-                  <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    loading="lazy"
-                    onerror="
-                      this.style.display='none';
-                      this.nextElementSibling.style.display='block';
-                    "
-                  >
+            <div class="product">
 
-                  <div
-                    class="product-placeholder"
-                    style="display:none"
-                  >
-                    ${product.emoji}
-                  </div>
-                `
-                : `
-                  <div class="product-placeholder">
-                    ${product.emoji}
-                  </div>
-                `;
-
-
-            return `
-
-              <article class="product">
-
-                <div class="product-image">
-                  ${image}
+                <div class="product-img">
+                    ${product.icon}
                 </div>
 
                 <div class="product-info">
 
-                  <div class="product-category">
-                    ${product.category}
-                  </div>
+                    <div class="product-category">
+                        ${product.category}
+                    </div>
 
-                  <h3 class="product-name">
-                    ${product.name}
-                  </h3>
+                    <h3>
+                        ${product.name}
+                    </h3>
 
-                  <div class="product-price">
-                    ${formatPrice(product.price)}
-                    تومان
-                  </div>
+                    <div class="price">
+                        ${formatPrice(product.price)}
+                    </div>
 
-                  <button
-                    type="button"
-                    class="add-cart"
-                    data-id="${product.id}"
-                  >
-                    🛒 افزودن به سبد خرید
-                  </button>
+                    <button
+                        class="add-btn"
+                        onclick="addToCart(${product.id})">
+
+                        افزودن به سبد خرید
+
+                    </button>
 
                 </div>
-
-              </article>
-
-            `;
-
-          })
-          .join("");
-
-
-      document
-        .querySelectorAll(".add-cart")
-        .forEach(button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              const id =
-                Number(button.dataset.id);
-
-              addToCart(id);
-
-            }
-          );
-
-        });
-
-    }
-
-
-    /* =========================
-       ADD TO CART
-    ========================= */
-
-    function addToCart(productId) {
-
-      const product =
-        products.find(
-          item =>
-            item.id === productId
-        );
-
-
-      if (!product) {
-        return;
-      }
-
-
-      const existing =
-        cart.find(
-          item =>
-            item.id === productId
-        );
-
-
-      if (existing) {
-
-        existing.qty =
-          Number(existing.qty || 0) + 1;
-
-      } else {
-
-        cart.push({
-
-          id: product.id,
-
-          name: product.name,
-
-          category: product.category,
-
-          price: product.price,
-
-          image: product.image,
-
-          emoji: product.emoji,
-
-          qty: 1
-
-        });
-
-      }
-
-
-      saveCart();
-
-      updateCartCount();
-
-      renderCart();
-
-      openCart();
-
-    }
-
-
-    /* =========================
-       CHANGE QUANTITY
-    ========================= */
-
-    function changeQuantity(
-      productId,
-      amount
-    ) {
-
-      const item =
-        cart.find(
-          product =>
-            product.id === productId
-        );
-
-
-      if (!item) {
-        return;
-      }
-
-
-      item.qty =
-        Number(item.qty || 0) + amount;
-
-
-      if (item.qty <= 0) {
-
-        cart =
-          cart.filter(
-            product =>
-              product.id !== productId
-          );
-
-      }
-
-
-      saveCart();
-
-      updateCartCount();
-
-      renderCart();
-
-    }
-
-
-    /* =========================
-       REMOVE
-    ========================= */
-
-    function removeFromCart(productId) {
-
-      cart =
-        cart.filter(
-          item =>
-            item.id !== productId
-        );
-
-
-      saveCart();
-
-      updateCartCount();
-
-      renderCart();
-
-    }
-
-
-    /* =========================
-       RENDER CART
-    ========================= */
-
-    function renderCart() {
-
-      if (!cart.length) {
-
-        cartContent.innerHTML = `
-
-          <div class="empty-cart">
-
-            🛒
-
-            <br><br>
-
-            سبد خرید شما خالی است.
-
-          </div>
-
-        `;
-
-        cartTotal.textContent =
-          "۰ تومان";
-
-        checkoutButton.style.display =
-          "none";
-
-        orderForm.classList.remove(
-          "active"
-        );
-
-        return;
-
-      }
-
-
-      checkoutButton.style.display =
-        "block";
-
-
-      let total = 0;
-
-
-      cartContent.innerHTML =
-        cart.map(item => {
-
-          const price =
-            Number(item.price || 0);
-
-          const quantity =
-            Number(item.qty || 1);
-
-
-          total +=
-            price * quantity;
-
-
-          const image =
-            item.image
-              ? `
-                <img
-                  src="${item.image}"
-                  alt="${item.name}"
-                  onerror="this.style.display='none'"
-                >
-              `
-              : `
-                <span>
-                  ${item.emoji || "👕"}
-                </span>
-              `;
-
-
-          return `
-
-            <div class="cart-item">
-
-              <div class="cart-item-image">
-
-                ${image}
-
-              </div>
-
-
-              <div class="cart-item-details">
-
-                <h4>
-                  ${item.name}
-                </h4>
-
-                <div>
-                  ${formatPrice(price)}
-                  تومان
-                </div>
-
-
-                <div class="quantity">
-
-                  <button
-                    type="button"
-                    data-action="increase"
-                    data-id="${item.id}"
-                  >
-                    +
-                  </button>
-
-                  <strong>
-                    ${quantity.toLocaleString("fa-IR")}
-                  </strong>
-
-                  <button
-                    type="button"
-                    data-action="decrease"
-                    data-id="${item.id}"
-                  >
-                    −
-                  </button>
-
-                </div>
-
-
-                <button
-                  type="button"
-                  class="remove-item"
-                  data-action="remove"
-                  data-id="${item.id}"
-                >
-                  حذف محصول
-                </button>
-
-              </div>
 
             </div>
 
-          `;
+        `).join("");
 
-        })
-        .join("");
-
-
-      cartTotal.textContent =
-        formatPrice(total) +
-        " تومان";
+}
 
 
-      cartContent
-        .querySelectorAll(
-          "[data-action]"
-        )
-        .forEach(button => {
+function setCategory(category){
 
-          const id =
-            Number(button.dataset.id);
+    document.getElementById("filter").value =
+        category;
 
-          const action =
-            button.dataset.action;
-
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              if (action === "increase") {
-
-                changeQuantity(id, 1);
-
-              }
-
-              if (action === "decrease") {
-
-                changeQuantity(id, -1);
-
-              }
-
-              if (action === "remove") {
-
-                removeFromCart(id);
-
-              }
-
-            }
-          );
-
+    document.getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
         });
-
-    }
-
-
-    /* =========================
-       CART OPEN
-    ========================= */
-
-    function openCart() {
-
-      cartOverlay.classList.add(
-        "active"
-      );
-
-      document.body.classList.add(
-        "lock"
-      );
-
-      renderCart();
-
-    }
-
-
-    /* =========================
-       CART CLOSE
-    ========================= */
-
-    function closeCart() {
-
-      cartOverlay.classList.remove(
-        "active"
-      );
-
-      document.body.classList.remove(
-        "lock"
-      );
-
-    }
-
-
-    /* =========================
-       SEARCH
-    ========================= */
-
-    searchInput.addEventListener(
-      "input",
-      renderProducts
-    );
-
-
-    categoryFilter.addEventListener(
-      "change",
-      renderProducts
-    );
-
-
-    /* =========================
-       CATEGORY CLICK
-    ========================= */
-
-    document
-      .querySelectorAll(".category")
-      .forEach(category => {
-
-        category.addEventListener(
-          "click",
-          () => {
-
-            categoryFilter.value =
-              category.dataset.category;
-
-            renderProducts();
-
-            document
-              .getElementById("products")
-              .scrollIntoView({
-                behavior: "smooth"
-              });
-
-          }
-        );
-
-      });
-
-
-    /* =========================
-       CHECKOUT
-    ========================= */
-
-    checkoutButton.addEventListener(
-      "click",
-      () => {
-
-        if (!cart.length) {
-
-          alert(
-            "سبد خرید خالی است."
-          );
-
-          return;
-
-        }
-
-
-        orderForm.classList.add(
-          "active"
-        );
-
-        checkoutButton.style.display =
-          "none";
-
-
-        orderForm.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      }
-    );
-
-
-    /* =========================
-       ORDER SUBMIT
-    ========================= */
-
-    orderForm.addEventListener(
-      "submit",
-      event => {
-
-        event.preventDefault();
-
-
-        if (!cart.length) {
-
-          alert(
-            "سبد خرید خالی است."
-          );
-
-          return;
-
-        }
-
-
-        const name =
-          document
-            .getElementById(
-              "customerName"
-            )
-            .value
-            .trim();
-
-
-        const phone =
-          document
-            .getElementById(
-              "customerPhone"
-            )
-            .value
-            .trim();
-
-
-        const address =
-          document
-            .getElementById(
-              "customerAddress"
-            )
-            .value
-            .trim();
-
-
-        if (
-          !name ||
-          !phone ||
-          !address
-        ) {
-
-          alert(
-            "لطفاً تمام اطلاعات را وارد کنید."
-          );
-
-          return;
-
-        }
-
-
-        const orderId =
-          Date.now()
-            .toString()
-            .slice(-6);
-
-
-        cart = [];
-
-        saveCart();
-
-        updateCartCount();
-
-        renderCart();
-
-
-        orderForm.classList.remove(
-          "active"
-        );
-
-
-        successBox.classList.add(
-          "active"
-        );
-
-
-        document
-          .getElementById(
-            "orderNumber"
-          )
-          .textContent =
-            "شماره سفارش: #" +
-            Number(orderId)
-              .toLocaleString("fa-IR");
-
-      }
-    );
-
-
-    /* =========================
-       CONTINUE SHOPPING
-    ========================= */
-
-    document
-      .getElementById(
-        "continueShopping"
-      )
-      .addEventListener(
-        "click",
-        () => {
-
-          successBox.classList.remove(
-            "active"
-          );
-
-          closeCart();
-
-          document
-            .getElementById(
-              "products"
-            )
-            .scrollIntoView({
-              behavior: "smooth"
-            });
-
-        }
-      );
-
-
-    /* =========================
-       CART EVENTS
-    ========================= */
-
-    document
-      .getElementById(
-        "openCart"
-      )
-      .addEventListener(
-        "click",
-        openCart
-      );
-
-
-    document
-      .getElementById(
-        "closeCart"
-      )
-      .addEventListener(
-        "click",
-        closeCart
-      );
-
-
-    cartOverlay.addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target ===
-          cartOverlay
-        ) {
-
-          closeCart();
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       ESC KEY
-    ========================= */
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (
-          event.key === "Escape"
-        ) {
-
-          closeCart();
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       START
-    ========================= */
-
-    updateCartCount();
 
     renderProducts();
 
-    renderCart();
+}
 
-  </script>
+
+function addToCart(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+    const existing =
+        cart.find(item => item.id === id);
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            id:product.id,
+            quantity:1
+        });
+
+    }
+
+
+    saveCart();
+    updateCart();
+
+}
+
+
+function changeQuantity(id, change){
+
+    const item =
+        cart.find(item => item.id === id);
+
+    if(!item) return;
+
+    item.quantity += change;
+
+
+    if(item.quantity <= 0){
+
+        cart =
+            cart.filter(item => item.id !== id);
+
+    }
+
+
+    saveCart();
+    updateCart();
+
+}
+
+
+function removeFromCart(id){
+
+    cart =
+        cart.filter(item => item.id !== id);
+
+    saveCart();
+    updateCart();
+
+}
+
+
+function updateCart(){
+
+    const items =
+        document.getElementById("cartItems");
+
+    const count =
+        cart.reduce(
+            (sum,item) => sum + item.quantity,
+            0
+        );
+
+
+    document.getElementById("cartCount")
+        .textContent = count;
+
+
+    if(cart.length === 0){
+
+        items.innerHTML = `
+            <div style="
+                text-align:center;
+                padding:50px 10px;
+                color:#777;
+            ">
+                🛒<br><br>
+                سبد خرید خالی است.
+            </div>
+        `;
+
+        document.getElementById("cartTotal")
+            .textContent = "0 تومان";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    items.innerHTML =
+        cart.map(item => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            const itemTotal =
+                product.price * item.quantity;
+
+            total += itemTotal;
+
+
+            return `
+
+                <div class="cart-item">
+
+                    <div class="cart-item-info">
+
+                        <h4>
+                            ${product.name}
+                        </h4>
+
+                        <small>
+                            ${formatPrice(product.price)}
+                        </small>
+
+                    </div>
+
+                    <div class="qty">
+
+                        <button
+                            onclick="changeQuantity(${product.id},1)">
+                            +
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="changeQuantity(${product.id},-1)">
+                            −
+                        </button>
+
+                        <button
+                            class="remove"
+                            onclick="removeFromCart(${product.id})">
+                            🗑
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+
+    document.getElementById("cartTotal")
+        .textContent = formatPrice(total);
+
+}
+
+
+function openCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+}
+
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        alert("سبد خرید شما خالی است.");
+
+        return;
+
+    }
+
+    closeCart();
+
+    document
+        .getElementById("checkout")
+        .classList.add("active");
+
+}
+
+
+function closeCheckout(){
+
+    document
+        .getElementById("checkout")
+        .classList.remove("active");
+
+}
+
+
+function submitOrder(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("customerName")
+        .value;
+
+    const phone =
+        document.getElementById("customerPhone")
+        .value;
+
+    const address =
+        document.getElementById("customerAddress")
+        .value;
+
+
+    const orderNumber =
+        "SS-" +
+        Date.now()
+        .toString()
+        .slice(-8);
+
+
+    document.getElementById("checkoutContent")
+        .innerHTML = `
+
+            <div class="success">
+
+                <div class="success-icon">
+                    ✅
+                </div>
+
+                <h2>
+                    سفارش با موفقیت ثبت شد
+                </h2>
+
+                <p style="margin:15px 0;color:#777">
+                    ${name} عزیز، سفارش شما دریافت شد.
+                </p>
+
+                <p>
+                    شماره سفارش:
+                    <strong>${orderNumber}</strong>
+                </p>
+
+                <p style="
+                    margin-top:15px;
+                    color:#777;
+                    font-size:13px;
+                ">
+                    برای هماهنگی ارسال با شما تماس گرفته خواهد شد.
+                </p>
+
+                <button
+                    class="checkout-btn"
+                    onclick="finishOrder()">
+
+                    بازگشت به فروشگاه
+
+                </button>
+
+            </div>
+
+        `;
+
+
+    localStorage.removeItem(
+        "SPORT_SHAKIBI_CART"
+    );
+
+    cart = [];
+
+    updateCart();
+
+}
+
+
+function finishOrder(){
+
+    closeCheckout();
+
+    location.reload();
+
+}
+
+
+renderProducts();
+updateCart();
+
+</script>
 
 </body>
 </html>
