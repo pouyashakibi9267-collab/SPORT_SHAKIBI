@@ -13,6 +13,10 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:#f4f7f5;
@@ -26,17 +30,23 @@ a{
 }
 
 .wrap{
-  width:min(1120px,92%);
+  width:min(1150px,92%);
   margin:auto;
 }
 
+/* HEADER */
+
 header{
   background:#07130f;
-  color:#fff;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px #0003;
 }
 
 .nav{
-  min-height:68px;
+  min-height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -54,8 +64,12 @@ header{
 
 nav{
   display:flex;
-  gap:22px;
+  gap:25px;
   font-size:14px;
+}
+
+nav a{
+  transition:.2s;
 }
 
 nav a:hover{
@@ -64,26 +78,33 @@ nav a:hover{
 
 .admin{
   background:#12a36a;
-  padding:9px 13px;
-  border-radius:9px;
+  padding:10px 15px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
 }
 
+/* HERO */
+
 .hero{
-  background:linear-gradient(120deg,#07130f,#0b3828,#12a36a);
-  color:#fff;
+  background:
+  radial-gradient(circle at 80% 20%,#12a36a66,transparent 35%),
+  linear-gradient(120deg,#07130f,#0b3828,#12a36a);
+  color:white;
   padding:75px 0;
 }
 
 .heroGrid{
   display:grid;
   grid-template-columns:1.2fr .8fr;
-  gap:30px;
+  gap:35px;
   align-items:center;
 }
 
 .hero h1{
   font-size:46px;
-  line-height:1.3;
+  line-height:1.35;
+  margin:0 0 20px;
 }
 
 .hero em{
@@ -94,125 +115,205 @@ nav a:hover{
 .hero p{
   line-height:2;
   font-size:17px;
+  color:#e5eee9;
 }
 
 .btn{
   display:inline-block;
-  background:#fff;
+  background:white;
   color:#08794d;
-  padding:13px 20px;
-  border-radius:10px;
+  padding:13px 22px;
+  border-radius:11px;
   font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
 }
 
 .art{
-  height:280px;
-  border-radius:25px;
-  background:#06110c;
+  height:300px;
+  border-radius:28px;
+  background:#06110ccc;
   display:grid;
   place-items:center;
   font-size:75px;
+  box-shadow:0 20px 50px #0003;
 }
+
+/* SECTIONS */
 
 .sec{
-  padding:50px 0;
+  padding:55px 0;
 }
 
-.cats,
-.grid{
+.sec h2{
+  margin-bottom:25px;
+}
+
+/* CATEGORIES */
+
+.cats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
-}
-
-.cat,
-.card,
-.banner{
-  background:#fff;
-  border-radius:17px;
-  box-shadow:0 5px 20px #1231;
+  gap:18px;
 }
 
 .cat{
-  text-align:center;
+  background:white;
+  border-radius:18px;
   padding:28px;
-  font-size:40px;
+  text-align:center;
+  font-size:42px;
+  box-shadow:0 5px 20px #1231;
+  transition:.2s;
+}
+
+.cat:hover{
+  transform:translateY(-5px);
 }
 
 .cat b{
   display:block;
   font-size:15px;
-  margin-top:10px;
+  margin-top:12px;
+}
+
+/* PRODUCTS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
 
 .card{
+  background:white;
+  border-radius:18px;
   overflow:hidden;
+  box-shadow:0 5px 20px #1231;
+  transition:.25s;
 }
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px #1232;
+}
+
+/* PRODUCT IMAGE */
 
 .photo{
-  height:200px;
+  height:260px;
   background:#e5ece9;
-  display:grid;
-  place-items:center;
-  font-size:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
 }
 
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.photo .emoji{
+  font-size:75px;
+}
+
+/* INFO */
+
 .info{
-  padding:15px;
+  padding:16px;
+}
+
+.info small{
+  color:#12a36a;
+  font-weight:bold;
 }
 
 .info h3{
-  margin:8px 0;
+  margin:9px 0;
+  font-size:17px;
 }
 
 .price{
   font-weight:900;
   font-size:18px;
-  margin:10px 0;
+  margin:12px 0;
 }
 
 .order{
   display:block;
   background:#07130f;
-  color:#fff;
+  color:white;
   text-align:center;
-  padding:10px;
-  border-radius:9px;
+  padding:11px;
+  border-radius:10px;
+  transition:.2s;
 }
 
 .order:hover{
   background:#12a36a;
 }
 
+/* STATUS */
+
 .status{
   text-align:center;
-  padding:30px;
-  background:#fff;
-  border-radius:15px;
+  padding:35px;
+  background:white;
+  border-radius:16px;
   color:#68756f;
+  grid-column:1/-1;
 }
 
+/* BANNER */
+
 .banner{
-  padding:28px;
+  background:white;
+  padding:30px;
+  border-radius:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:20px;
+  box-shadow:0 5px 20px #1231;
 }
 
 .banner .btn{
   background:#12a36a;
-  color:#fff;
+  color:white;
 }
+
+/* FOOTER */
 
 footer{
   background:#07130f;
   color:#b9c8c1;
-  padding:35px 0;
+  padding:40px 0;
+  margin-top:20px;
 }
 
 footer a{
   color:#22c982;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .cats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
 @media(max-width:760px){
@@ -229,18 +330,28 @@ footer a{
     font-size:35px;
   }
 
-  .cats,
   .grid{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  .photo{
+    height:230px;
   }
 
 }
 
 @media(max-width:450px){
 
-  .cats,
   .grid{
     grid-template-columns:1fr;
+  }
+
+  .cats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .photo{
+    height:300px;
   }
 
   .banner{
@@ -257,6 +368,8 @@ footer a{
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
@@ -280,6 +393,8 @@ SPORT_<b>SHAKIBI</b>
 
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -311,6 +426,8 @@ SPORT_<b>SHAKIBI</b>
 
 </section>
 
+
+<!-- CATEGORIES -->
 
 <section id="categories" class="wrap sec">
 
@@ -345,6 +462,8 @@ SPORT_<b>SHAKIBI</b>
 </section>
 
 
+<!-- PRODUCTS -->
+
 <section id="products" class="wrap sec">
 
 <h2>
@@ -361,6 +480,8 @@ SPORT_<b>SHAKIBI</b>
 
 </section>
 
+
+<!-- CONTACT -->
 
 <section id="contact" class="wrap sec">
 
@@ -391,6 +512,8 @@ target="_blank"
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <div class="wrap">
@@ -401,7 +524,10 @@ SPORT_SHAKIBI
 
 <p>
 Telegram:
-<a href="https://t.me/sportshakibi_bu" target="_blank">
+<a
+href="https://t.me/sportshakibi_bu"
+target="_blank"
+>
 @sportshakibi_bu
 </a>
 </p>
@@ -412,6 +538,10 @@ Instagram: SPORT_SHAKIBI
 
 <p>
 📞 09388529267
+</p>
+
+<p>
+کیفیتی که می‌ماند ❤️
 </p>
 
 </div>
@@ -430,34 +560,80 @@ function createProduct(product){
   card.className = "card";
 
 
+  /* PHOTO */
+
   const photo = document.createElement("div");
   photo.className = "photo";
-  photo.textContent = product.emoji || "👕";
 
+
+  if(product.image && product.image.trim() !== ""){
+
+    const img = document.createElement("img");
+
+    img.src = product.image;
+    img.alt = product.name || "محصول SPORT_SHAKIBI";
+    img.loading = "lazy";
+
+    img.onerror = function(){
+
+      photo.innerHTML = "";
+
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.textContent = product.emoji || "👕";
+
+      photo.appendChild(emoji);
+
+    };
+
+    photo.appendChild(img);
+
+  }else{
+
+    const emoji = document.createElement("div");
+    emoji.className = "emoji";
+    emoji.textContent = product.emoji || "👕";
+
+    photo.appendChild(emoji);
+
+  }
+
+
+  /* INFO */
 
   const info = document.createElement("div");
   info.className = "info";
 
 
   const category = document.createElement("small");
-  category.textContent = product.category || "اسپرت";
+  category.textContent =
+    product.category || "اسپرت";
 
 
   const name = document.createElement("h3");
-  name.textContent = product.name || "محصول";
+  name.textContent =
+    product.name || "محصول";
 
 
   const price = document.createElement("div");
   price.className = "price";
+
   price.textContent =
     (product.price || "0") + " تومان";
 
 
   const order = document.createElement("a");
+
   order.className = "order";
-  order.href = "https://t.me/sportshakibi_bu";
+  order.href =
+    "https://t.me/sportshakibi_bu";
+
   order.target = "_blank";
-  order.textContent = "سفارش در تلگرام";
+
+  order.rel = "noopener";
+
+  order.textContent =
+    "سفارش در تلگرام";
 
 
   info.appendChild(category);
@@ -465,13 +641,17 @@ function createProduct(product){
   info.appendChild(price);
   info.appendChild(order);
 
+
   card.appendChild(photo);
   card.appendChild(info);
+
 
   return card;
 
 }
 
+
+/* LOAD PRODUCTS */
 
 async function loadProducts(){
 
@@ -481,28 +661,42 @@ async function loadProducts(){
       "/api/products",
       {
         method:"GET",
-        credentials:"include"
+        credentials:"include",
+        cache:"no-store"
       }
     );
 
 
     if(!response.ok){
 
-      throw new Error("API Error");
+      throw new Error(
+        "API Error: " + response.status
+      );
 
     }
 
 
-    const products = await response.json();
+    const products =
+      await response.json();
 
 
     gridElement.innerHTML = "";
 
 
-    if(!Array.isArray(products) || products.length === 0){
+    if(
+      !Array.isArray(products) ||
+      products.length === 0
+    ){
 
-      gridElement.innerHTML =
-        '<div class="status">هنوز محصولی برای نمایش ثبت نشده است.</div>';
+      const empty =
+        document.createElement("div");
+
+      empty.className = "status";
+
+      empty.textContent =
+        "هنوز محصولی برای نمایش ثبت نشده است.";
+
+      gridElement.appendChild(empty);
 
       return;
 
@@ -520,7 +714,11 @@ async function loadProducts(){
 
   }catch(error){
 
-    console.error(error);
+    console.error(
+      "Products error:",
+      error
+    );
+
 
     gridElement.innerHTML =
       '<div class="status">فعلاً دریافت محصولات امکان‌پذیر نیست.</div>';
@@ -535,4 +733,5 @@ loadProducts();
 </script>
 
 </body>
+
 </html>
