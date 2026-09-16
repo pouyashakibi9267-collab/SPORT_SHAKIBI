@@ -5,7 +5,44 @@
 <div class="panel"><h2>محصولات ثبت‌شده (<span id="count">0</span>)</h2><div id="list"></div></div></main>
 <script>
 async function load(){let r=await fetch("/api/products");if(r.status===401){location.href="login.html";return}let p=await r.json();count.textContent=p.length;list.innerHTML=p.map(x=>`<div class="item"><span class="ico">${x.emoji||"👕"}</span><div><b>${x.name}</b><small>${x.category} · ${x.price} تومان</small></div><button class="del" onclick="del(${x.id})">حذف</button></div>`).join("")}
-async function add(){if(!name.value||!price.value)return alert("نام و قیمت را وارد کنید");let r=await fetch("/api/products",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:name.value,category:category.value,price:price.value,emoji:emoji.value})});if(r.ok){name.value=category.value=price.value=emoji.value="";load()}else alert("عملیات ناموفق بود")}
+  را وارد async function add(){
+  const nameEl = document.getElementById("name");
+  const categoryEl = document.getElementById("category");
+  const priceEl = document.getElementById("price");
+  const emojiEl = document.getElementById("emoji");
+
+  const nameValue = nameEl.value.trim();
+  const categoryValue = categoryEl.value.trim();
+  const priceValue = priceEl.value.trim();
+  const emojiValue = emojiEl.value.trim();
+
+  if(!nameValue || !priceValue){
+    return alert("نام و قیمت را وارد کنید");
+  }
+
+  const r = await fetch("/api/products",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      name:nameValue,
+      category:categoryValue || "اسپرت",
+      price:priceValue,
+      emoji:emojiValue || "👕"
+    })
+  });
+
+  if(r.ok){
+    nameEl.value="";
+    categoryEl.value="";
+    priceEl.value="";
+    emojiEl.value="";
+    load();
+  }else{
+    alert("عملیات ناموفق بود");
+  }
+  }
 async function del(id){if(confirm("این محصول حذف شود؟")){await fetch("/api/products?id="+id,{method:"DELETE"});load()}}
 async function logout(){await fetch("/api/logout",{method:"POST"});location.href="login.html"} load();
 </script>
