@@ -6,150 +6,39 @@
 <title>مدیریت SPORT_SHAKIBI</title>
 
 <style>
-*{
-  box-sizing:border-box;
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7f5;color:#10201a;font-family:Tahoma,Arial,sans-serif}
+.wrap{width:min(1000px,92%);margin:auto}
+header{background:#07130f;color:#fff}
+.top{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{font-weight:900}.brand b{color:#22c982}
+.top a{color:#fff;text-decoration:none;margin-left:12px}
+button,input{font:inherit;border-radius:9px;padding:11px;border:1px solid #d5dfdb}
+button{cursor:pointer}
+.out,.del{background:#fff0f0;color:#b33;border-color:#f0cccc}
+.add{background:#12a36a;color:#fff;border:0}
+.panel{background:#fff;border-radius:18px;padding:22px;margin:25px 0;box-shadow:0 5px 20px #0001}
+.form{display:grid;grid-template-columns:1.2fr 1fr 1fr .5fr 1.8fr auto;gap:8px}
+.message{margin-top:12px;padding:10px;border-radius:8px;display:none}
+.success{display:block;background:#e8fff4;color:#087c4c}
+.error{display:block;background:#fff0f0;color:#b33}
+.item{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid #e7eeeb}
+.item div{flex:1}
+.item small{display:block;color:#6c7973;margin-top:4px}
+.product-img{width:70px;height:70px;object-fit:cover;border-radius:10px;background:#e5ece9}
+.ico{font-size:30px}
+.empty{color:#6c7973;padding:15px 0}
+
+@media(max-width:850px){
+.form{grid-template-columns:1fr 1fr}
+.form .add{grid-column:1/-1}
 }
 
-body{
-  margin:0;
-  background:#f3f7f5;
-  color:#10201a;
-  font-family:Tahoma,Arial,sans-serif;
-}
-
-.wrap{
-  width:min(1000px,92%);
-  margin:auto;
-}
-
-header{
-  background:#07130f;
-  color:#fff;
-}
-
-.top{
-  min-height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.brand{
-  font-weight:900;
-}
-
-.brand b{
-  color:#22c982;
-}
-
-.top a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:12px;
-}
-
-button,
-input{
-  font:inherit;
-  border-radius:9px;
-  padding:11px;
-  border:1px solid #d5dfdb;
-}
-
-button{
-  cursor:pointer;
-}
-
-.out,
-.del{
-  background:#fff0f0;
-  color:#b33;
-  border-color:#f0cccc;
-}
-
-.add{
-  background:#12a36a;
-  color:#fff;
-  border:0;
-}
-
-.panel{
-  background:#fff;
-  border-radius:18px;
-  padding:22px;
-  margin:25px 0;
-  box-shadow:0 5px 20px #0001;
-}
-
-.form{
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr .6fr auto;
-  gap:8px;
-}
-
-.message{
-  margin-top:12px;
-  padding:10px;
-  border-radius:8px;
-  display:none;
-}
-
-.success{
-  display:block;
-  background:#e8fff4;
-  color:#087c4c;
-}
-
-.error{
-  display:block;
-  background:#fff0f0;
-  color:#b33;
-}
-
-.item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px 0;
-  border-top:1px solid #e7eeeb;
-}
-
-.item div{
-  flex:1;
-}
-
-.item small{
-  display:block;
-  color:#6c7973;
-  margin-top:4px;
-}
-
-.ico{
-  font-size:30px;
-}
-
-.empty{
-  color:#6c7973;
-  padding:15px 0;
-}
-
-@media(max-width:720px){
-  .form{
-    grid-template-columns:1fr;
-  }
-
-  .form .add{
-    padding:12px;
-  }
-
-  .item{
-    align-items:flex-start;
-  }
-
-  .top{
-    font-size:13px;
-  }
+@media(max-width:550px){
+.form{grid-template-columns:1fr}
+.form .add{grid-column:auto}
+.item{align-items:flex-start}
+.product-img{width:60px;height:60px}
 }
 </style>
 </head>
@@ -157,403 +46,390 @@ button{
 <body>
 
 <header>
-  <div class="wrap top">
+<div class="wrap top">
+<div class="brand">SPORT_<b>SHAKIBI</b></div>
 
-    <div class="brand">
-      SPORT_<b>SHAKIBI</b>
-    </div>
-
-    <div>
-      <a href="index.html">سایت</a>
-      <button class="out" id="logoutBtn">خروج</button>
-    </div>
-
-  </div>
+<div>
+<a href="index.html">سایت</a>
+<button class="out" id="logoutBtn">خروج</button>
+</div>
+</div>
 </header>
 
 <main class="wrap">
 
-  <div class="panel">
+<div class="panel">
 
-    <h1>مدیریت محصولات</h1>
+<h1>مدیریت محصولات</h1>
 
-    <p>
-      محصولات اینجا در دیتابیس آنلاین ذخیره می‌شوند و برای همه بازدیدکنندگان قابل نمایش هستند.
-    </p>
+<p>
+محصولات اینجا در دیتابیس آنلاین ذخیره می‌شوند.
+</p>
 
-    <form id="productForm" class="form">
+<form id="productForm" class="form">
 
-      <input
-        id="name"
-        type="text"
-        placeholder="نام محصول"
-        required
-      >
+<input
+id="name"
+type="text"
+placeholder="نام محصول"
+required
+>
 
-      <input
-        id="category"
-        type="text"
-        placeholder="دسته‌بندی"
-        value="فوتبال"
-      >
+<input
+id="category"
+type="text"
+placeholder="دسته‌بندی"
+value="فوتبال"
+>
 
-      <input
-        id="price"
-        type="text"
-        inputmode="numeric"
-        placeholder="قیمت"
-        required
-      >
+<input
+id="price"
+type="text"
+inputmode="numeric"
+placeholder="قیمت"
+required
+>
 
-      <input
-        id="emoji"
-        type="text"
-        placeholder="👕"
-        value="👕"
-      >
+<input
+id="emoji"
+type="text"
+placeholder="👕"
+value="👕"
+>
 
-      <button
-        class="add"
-        id="addBtn"
-        type="submit"
-      >
-        افزودن
-      </button>
+<input
+id="image"
+type="url"
+placeholder="لینک عکس محصول"
+>
 
-    </form>
+<button
+class="add"
+id="addBtn"
+type="submit"
+>
+افزودن
+</button>
 
-    <div id="message" class="message"></div>
+</form>
 
-  </div>
+<div id="message" class="message"></div>
 
-  <div class="panel">
+</div>
 
-    <h2>
-      محصولات ثبت‌شده
-      (<span id="count">0</span>)
-    </h2>
 
-    <div id="list">
-      در حال دریافت محصولات...
-    </div>
+<div class="panel">
 
-  </div>
+<h2>
+محصولات ثبت‌شده
+(<span id="count">0</span>)
+</h2>
+
+<div id="list">
+در حال دریافت محصولات...
+</div>
+
+</div>
 
 </main>
 
+
 <script>
 
-const nameInput = document.getElementById("name");
-const categoryInput = document.getElementById("category");
-const priceInput = document.getElementById("price");
-const emojiInput = document.getElementById("emoji");
+const nameInput=document.getElementById("name");
+const categoryInput=document.getElementById("category");
+const priceInput=document.getElementById("price");
+const emojiInput=document.getElementById("emoji");
+const imageInput=document.getElementById("image");
 
-const productForm = document.getElementById("productForm");
-const addBtn = document.getElementById("addBtn");
+const productForm=document.getElementById("productForm");
+const addBtn=document.getElementById("addBtn");
 
-const countElement = document.getElementById("count");
-const listElement = document.getElementById("list");
+const countElement=document.getElementById("count");
+const listElement=document.getElementById("list");
 
-const messageElement = document.getElementById("message");
-const logoutBtn = document.getElementById("logoutBtn");
+const messageElement=document.getElementById("message");
+const logoutBtn=document.getElementById("logoutBtn");
 
 
-function showMessage(text, type){
+function showMessage(text,type){
 
-  messageElement.textContent = text;
-
-  messageElement.className = "message " + type;
+messageElement.textContent=text;
+messageElement.className="message "+type;
 
 }
 
 
 async function loadProducts(){
 
-  try{
+try{
 
-    const response = await fetch("/api/products", {
-      method:"GET",
-      credentials:"include"
-    });
+const response=await fetch("/api/products",{
+method:"GET",
+credentials:"include"
+});
 
-    if(response.status === 401){
+if(response.status===401){
+window.location.href="login.html";
+return;
+}
 
-      window.location.href = "login.html";
-      return;
+if(!response.ok){
+throw new Error("خطا در دریافت محصولات");
+}
 
-    }
+const products=await response.json();
 
-    if(!response.ok){
+countElement.textContent=products.length;
 
-      throw new Error("خطا در دریافت محصولات");
+listElement.innerHTML="";
 
-    }
+if(products.length===0){
 
-    const products = await response.json();
+listElement.innerHTML=
+'<div class="empty">هنوز محصولی ثبت نشده است.</div>';
 
-    countElement.textContent = products.length;
+return;
 
-    listElement.innerHTML = "";
+}
 
-    if(products.length === 0){
 
-      listElement.innerHTML =
-        '<div class="empty">هنوز محصولی ثبت نشده است.</div>';
+products.forEach(product=>{
 
-      return;
+const item=document.createElement("div");
+item.className="item";
 
-    }
 
-    products.forEach(product => {
+if(product.image){
 
-      const item = document.createElement("div");
-      item.className = "item";
+const img=document.createElement("img");
+img.className="product-img";
+img.src=product.image;
+img.alt=product.name || "محصول";
+img.loading="lazy";
 
-      const icon = document.createElement("span");
-      icon.className = "ico";
-      icon.textContent = product.emoji || "👕";
+item.appendChild(img);
 
-      const info = document.createElement("div");
+}else{
 
-      const title = document.createElement("b");
-      title.textContent = product.name;
+const icon=document.createElement("span");
+icon.className="ico";
+icon.textContent=product.emoji || "👕";
 
-      const details = document.createElement("small");
-      details.textContent =
-        (product.category || "اسپرت") +
-        " · " +
-        product.price +
-        " تومان";
+item.appendChild(icon);
 
-      info.appendChild(title);
-      info.appendChild(details);
+}
 
-      const deleteButton = document.createElement("button");
 
-      deleteButton.className = "del";
-      deleteButton.textContent = "حذف";
+const info=document.createElement("div");
 
-      deleteButton.addEventListener("click", function(){
+const title=document.createElement("b");
+title.textContent=product.name;
 
-        deleteProduct(product.id);
+const details=document.createElement("small");
 
-      });
+details.textContent=
+(product.category || "اسپرت")+
+" · "+
+product.price+
+" تومان";
 
-      item.appendChild(icon);
-      item.appendChild(info);
-      item.appendChild(deleteButton);
+info.appendChild(title);
+info.appendChild(details);
 
-      listElement.appendChild(item);
 
-    });
+const deleteButton=document.createElement("button");
 
-  }catch(error){
+deleteButton.className="del";
+deleteButton.textContent="حذف";
 
-    console.error(error);
+deleteButton.addEventListener("click",()=>{
+deleteProduct(product.id);
+});
 
-    listElement.innerHTML =
-      '<div class="empty">خطا در دریافت محصولات.</div>';
 
-  }
+item.appendChild(info);
+item.appendChild(deleteButton);
+
+listElement.appendChild(item);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+listElement.innerHTML=
+'<div class="empty">خطا در دریافت محصولات.</div>';
+
+}
 
 }
 
 
 async function addProduct(event){
 
-  event.preventDefault();
-
-  const name = nameInput.value.trim();
-  const category = categoryInput.value.trim() || "اسپرت";
-  const price = priceInput.value.trim();
-  const emoji = emojiInput.value.trim() || "👕";
+event.preventDefault();
 
 
-  if(!name){
-
-    showMessage("لطفاً نام محصول را وارد کنید.", "error");
-    nameInput.focus();
-    return;
-
-  }
+const name=nameInput.value.trim();
+const category=categoryInput.value.trim() || "اسپرت";
+const price=priceInput.value.trim();
+const emoji=emojiInput.value.trim() || "👕";
+const image=imageInput.value.trim();
 
 
-  if(!price){
+if(!name){
 
-    showMessage("لطفاً قیمت محصول را وارد کنید.", "error");
-    priceInput.focus();
-    return;
+showMessage("نام محصول را وارد کنید.","error");
+return;
 
-  }
-
-
-  addBtn.disabled = true;
-  addBtn.textContent = "در حال افزودن...";
+}
 
 
-  try{
+if(!price){
 
-    const response = await fetch("/api/products", {
+showMessage("قیمت محصول را وارد کنید.","error");
+return;
 
-      method:"POST",
-
-      credentials:"include",
-
-      headers:{
-        "Content-Type":"application/json"
-      },
-
-      body:JSON.stringify({
-
-        name:name,
-        category:category,
-        price:price,
-        emoji:emoji
-
-      })
-
-    });
+}
 
 
-    if(response.status === 401){
-
-      window.location.href = "login.html";
-      return;
-
-    }
+addBtn.disabled=true;
+addBtn.textContent="در حال افزودن...";
 
 
-    if(!response.ok){
+try{
 
-      const errorText = await response.text();
+const response=await fetch("/api/products",{
 
-      console.error(errorText);
+method:"POST",
 
-      throw new Error("افزودن محصول ناموفق بود");
+credentials:"include",
 
-    }
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name:name,
+category:category,
+price:price,
+emoji:emoji,
+image:image
+
+})
+
+});
 
 
-    nameInput.value = "";
-    priceInput.value = "";
+if(response.status===401){
 
-    showMessage(
-      "محصول با موفقیت اضافه شد ✅",
-      "success"
-    );
+window.location.href="login.html";
+return;
 
-    await loadProducts();
+}
 
 
-  }catch(error){
+if(!response.ok){
 
-    console.error(error);
+throw new Error("افزودن محصول ناموفق بود");
 
-    showMessage(
-      "افزودن محصول انجام نشد. اتصال سایت را بررسی کنید.",
-      "error"
-    );
+}
 
-  }finally{
 
-    addBtn.disabled = false;
-    addBtn.textContent = "افزودن";
+nameInput.value="";
+priceInput.value="";
+imageInput.value="";
 
-  }
+showMessage(
+"محصول با موفقیت اضافه شد ✅",
+"success"
+);
+
+await loadProducts();
+
+
+}catch(error){
+
+console.error(error);
+
+showMessage(
+"افزودن محصول انجام نشد.",
+"error"
+);
+
+}finally{
+
+addBtn.disabled=false;
+addBtn.textContent="افزودن";
+
+}
 
 }
 
 
 async function deleteProduct(id){
 
-  const confirmed = confirm(
-    "آیا مطمئن هستید که این محصول حذف شود؟"
-  );
-
-  if(!confirmed){
-    return;
-  }
+if(!confirm("آیا مطمئن هستید که این محصول حذف شود؟")){
+return;
+}
 
 
-  try{
+try{
 
-    const response = await fetch(
-      "/api/products?id=" + encodeURIComponent(id),
-      {
-        method:"DELETE",
-        credentials:"include"
-      }
-    );
-
-
-    if(response.status === 401){
-
-      window.location.href = "login.html";
-      return;
-
-    }
+const response=await fetch(
+"/api/products?id="+encodeURIComponent(id),
+{
+method:"DELETE",
+credentials:"include"
+}
+);
 
 
-    if(!response.ok){
-
-      throw new Error("حذف محصول ناموفق بود");
-
-    }
+if(!response.ok){
+throw new Error("حذف ناموفق بود");
+}
 
 
-    showMessage(
-      "محصول حذف شد ✅",
-      "success"
-    );
+await loadProducts();
 
-    await loadProducts();
+}catch(error){
 
+console.error(error);
 
-  }catch(error){
+showMessage(
+"حذف محصول انجام نشد.",
+"error"
+);
 
-    console.error(error);
-
-    showMessage(
-      "حذف محصول انجام نشد.",
-      "error"
-    );
-
-  }
+}
 
 }
 
 
 async function logout(){
 
-  try{
+await fetch("/api/logout",{
+method:"POST",
+credentials:"include"
+});
 
-    await fetch("/api/logout", {
-      method:"POST",
-      credentials:"include"
-    });
-
-  }catch(error){
-
-    console.error(error);
-
-  }
-
-  window.location.href = "login.html";
+window.location.href="login.html";
 
 }
 
 
 productForm.addEventListener(
-  "submit",
-  addProduct
+"submit",
+addProduct
 );
-
 
 logoutBtn.addEventListener(
-  "click",
-  logout
+"click",
+logout
 );
-
 
 loadProducts();
 
